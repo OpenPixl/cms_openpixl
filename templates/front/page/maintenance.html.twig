@@ -3,13 +3,17 @@
 {% block title %}Site en Maintenance - OpenPixl{% endblock %}
 
 {% block body %}
-    <div class="bg-gray-900 h-screen flex flex-col items-center justify-center text-center">
+    <div class="maintenance-background bg-gray-900 h-screen flex flex-col items-center justify-center text-center">
+        <div>
+            <img src="{{ asset('images/application/Logo-fond_blanc_transparent.png') }}" class="h-64 w-64" alt="Logo de la société OpenPixl">
+        </div>
         <div class="text-white">
             <h1 class="text-4xl font-bold">Nous revenons très vite !!</h1>
             <p class="mt-4 text-lg">Nous travaillons actuellement à la refonte de notre site !</p>
         </div>
         <div class="mt-8 flex flex-col items-center justify-center">
             <form action="#" method="post" class="flex items-center">
+                <label for="email" class="sr-only" aria-label="email">Email</label>
                 <input
                     type="email"
                     name="email"
