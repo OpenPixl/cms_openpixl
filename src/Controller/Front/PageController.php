@@ -17,7 +17,7 @@ final class PageController extends AbstractController
     }
 
     #[Route('/', name: 'app_front_page_maintenance')]
-    public function Maintenance(): Response
+    public function maintenance(): Response
     {
         return $this->render('front/page/maintenance.html.twig', [
             'controller_name' => 'PageController',
