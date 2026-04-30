@@ -1,7 +1,32 @@
 
 services:
-###> doctrine/doctrine-bundle ###
-  database:
+
+  php:
+    build:
+      context: .
+      args:
+        - SYMFONY_VERSION=${SYMFONY_VERSION:-8.0.*}
+        - PHP_VERSION=${PHP_VERSION:-8.4}
+        - GIT_USER_EMAIL=${GIT_USER_EMAIL:-youremail@email.com}
+        - GIT_USER_NAME=${GIT_USER_NAME:-yourname}
+
+    container_name: cms_project_php
+    restart: unless-stopped
+    ports:
+      - "81:80"
+    #  - "443:443"
+    #  - "443:443/udp"
+    volumes:
+      - ./:/app
+    environment:
+      - SERVER_NAME=:80
+    depends_on:
+      - db
+    networks:
+      - cms_project
+
+  ###> doctrine/doctrine-bundle ###
+  db:
     image: postgres:${POSTGRES_VERSION:-16}-alpine
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-app}
@@ -17,9 +42,13 @@ services:
       - database_data:/var/lib/postgresql/data:rw
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
       # - ./docker/db/data:/var/lib/postgresql/data:rw
-###< doctrine/doctrine-bundle ###
+  ###< doctrine/doctrine-bundle ###
 
 volumes:
 ###> doctrine/doctrine-bundle ###
   database_data:
 ###< doctrine/doctrine-bundle ###
+
+networks:
+  cms_project:
+    external: true
