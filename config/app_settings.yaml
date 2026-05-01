@@ -1,0 +1,25 @@
+app:
+    application: "OpenPixl"
+    site:
+        slogan: "Le meilleur site de la ville"
+        description: "OpenPixl est le meilleur site de la ville"
+        adresse: "12 rue de la ville, 75000 Paris"
+        cp: "75000"
+        commune: "Paris"
+        hebergement:
+            nom: "OVH"
+            url: "https://www.ovh.com"
+        webmaster:
+            name: "Admin"
+            email: "xavier.burke@openpixl.fr"
+        social:
+            twitter: "https://twitter.com/monsite"
+            facebook: "https://facebook.com/monsite"
+    site_offline: true
+    maintenance:
+        offline_title: "Nous revenons très vite !!"
+        offline_message: "Nous travaillons actuellement à la refonte de notre site !"
+    logo: "images/application/Logo-fond_blanc_transparent.png"
+
+
+

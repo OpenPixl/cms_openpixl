@@ -1,0 +1,1871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="in"
+                 name="Instance Name" start-page="README.md">
+
+    <toc-element topic="README.md"/>
+    <toc-element toc-title="vendor">
+        <toc-element toc-title="symfony">
+            <toc-element toc-title="flex">
+                <toc-element topic="flex_README.md"/>
+            </toc-element>
+            <toc-element toc-title="runtime">
+                <toc-element topic="runtime_README.md"/>
+                <toc-element topic="runtime_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="cache-contracts">
+                <toc-element topic="cache-contracts_README.md"/>
+                <toc-element topic="cache-contracts_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="polyfill-mbstring">
+                <toc-element topic="polyfill-mbstring_README.md"/>
+            </toc-element>
+            <toc-element toc-title="polyfill-intl-normalizer">
+                <toc-element topic="polyfill-intl-normalizer_README.md"/>
+            </toc-element>
+            <toc-element toc-title="polyfill-intl-grapheme">
+                <toc-element topic="polyfill-intl-grapheme_README.md"/>
+            </toc-element>
+            <toc-element toc-title="string">
+                <toc-element topic="string_README.md"/>
+                <toc-element topic="string_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="deprecation-contracts">
+                <toc-element topic="deprecation-contracts_README.md"/>
+                <toc-element topic="deprecation-contracts_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="service-contracts">
+                <toc-element topic="service-contracts_README.md"/>
+                <toc-element topic="service-contracts_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="console">
+                <toc-element topic="console_README.md"/>
+                <toc-element topic="console_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="dotenv">
+                <toc-element topic="dotenv_README.md"/>
+                <toc-element topic="dotenv_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="event-dispatcher-contracts">
+                <toc-element topic="event-dispatcher-contracts_README.md"/>
+                <toc-element topic="event-dispatcher-contracts_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="routing">
+                <toc-element topic="routing_README.md"/>
+                <toc-element topic="routing_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="polyfill-php85">
+                <toc-element topic="polyfill-php85_README.md"/>
+            </toc-element>
+            <toc-element toc-title="http-foundation">
+                <toc-element topic="http-foundation_README.md"/>
+                <toc-element topic="http-foundation_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="event-dispatcher">
+                <toc-element topic="symfony_event-dispatcher_README.md"/>
+                <toc-element topic="event-dispatcher_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="var-dumper">
+                <toc-element topic="var-dumper_README.md"/>
+                <toc-element topic="var-dumper_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="error-handler">
+                <toc-element topic="error-handler_README.md"/>
+                <toc-element topic="error-handler_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="http-kernel">
+                <toc-element topic="http-kernel_README.md"/>
+                <toc-element topic="http-kernel_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="finder">
+                <toc-element topic="finder_README.md"/>
+                <toc-element topic="finder_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="filesystem">
+                <toc-element topic="filesystem_README.md"/>
+                <toc-element topic="filesystem_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="var-exporter">
+                <toc-element topic="var-exporter_README.md"/>
+                <toc-element topic="var-exporter_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="dependency-injection">
+                <toc-element topic="dependency-injection_README.md"/>
+                <toc-element topic="dependency-injection_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="config">
+                <toc-element topic="config_README.md"/>
+                <toc-element topic="config_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="cache">
+                <toc-element topic="symfony_cache_README.md"/>
+                <toc-element topic="symfony_cache_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="framework-bundle">
+                <toc-element topic="framework-bundle_README.md"/>
+                <toc-element topic="framework-bundle_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="yaml">
+                <toc-element topic="yaml_README.md"/>
+                <toc-element topic="yaml_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="stopwatch">
+                <toc-element topic="stopwatch_README.md"/>
+                <toc-element topic="stopwatch_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="doctrine-bridge">
+                <toc-element topic="doctrine-bridge_README.md"/>
+                <toc-element topic="doctrine-bridge_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="polyfill-intl-idn">
+                <toc-element topic="polyfill-intl-idn_README.md"/>
+            </toc-element>
+            <toc-element toc-title="dom-crawler">
+                <toc-element topic="dom-crawler_README.md"/>
+                <toc-element topic="dom-crawler_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="browser-kit">
+                <toc-element topic="browser-kit_README.md"/>
+                <toc-element topic="browser-kit_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="css-selector">
+                <toc-element topic="css-selector_README.md"/>
+                <toc-element topic="css-selector_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="translation-contracts">
+                <toc-element topic="translation-contracts_README.md"/>
+                <toc-element topic="translation-contracts_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="twig-bridge">
+                <toc-element topic="twig-bridge_README.md"/>
+                <toc-element topic="twig-bridge_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="debug-bundle">
+                <toc-element topic="debug-bundle_README.md"/>
+                <toc-element topic="debug-bundle_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="http-client-contracts">
+                <toc-element topic="http-client-contracts_README.md"/>
+                <toc-element topic="http-client-contracts_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="clock">
+                <toc-element topic="symfony_clock_README.md"/>
+                <toc-element topic="symfony_clock_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="messenger">
+                <toc-element topic="messenger_README.md"/>
+                <toc-element topic="messenger_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="monolog-bridge">
+                <toc-element topic="monolog-bridge_README.md"/>
+                <toc-element topic="monolog-bridge_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="options-resolver">
+                <toc-element topic="options-resolver_README.md"/>
+                <toc-element topic="options-resolver_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="password-hasher">
+                <toc-element topic="password-hasher_README.md"/>
+                <toc-element topic="password-hasher_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="polyfill-intl-icu">
+                <toc-element topic="polyfill-intl-icu_README.md"/>
+            </toc-element>
+            <toc-element toc-title="type-info">
+                <toc-element topic="type-info_README.md"/>
+                <toc-element topic="type-info_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="property-info">
+                <toc-element topic="property-info_README.md"/>
+                <toc-element topic="property-info_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="security-core">
+                <toc-element topic="security-core_README.md"/>
+                <toc-element topic="security-core_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="security-csrf">
+                <toc-element topic="security-csrf_README.md"/>
+                <toc-element topic="security-csrf_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="property-access">
+                <toc-element topic="property-access_README.md"/>
+                <toc-element topic="property-access_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="security-http">
+                <toc-element topic="security-http_README.md"/>
+                <toc-element topic="security-http_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="serializer">
+                <toc-element topic="serializer_README.md"/>
+                <toc-element topic="serializer_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="twig-bundle">
+                <toc-element topic="twig-bundle_README.md"/>
+                <toc-element topic="twig-bundle_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="web-profiler-bundle">
+                <toc-element topic="web-profiler-bundle_README.md"/>
+                <toc-element topic="web-profiler-bundle_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="web-link">
+                <toc-element topic="web-link_README.md"/>
+                <toc-element topic="web-link_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="validator">
+                <toc-element topic="validator_README.md"/>
+                <toc-element topic="validator_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="translation">
+                <toc-element topic="translation_README.md"/>
+                <toc-element topic="translation_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="security-bundle">
+                <toc-element topic="security-bundle_README.md"/>
+                <toc-element topic="security-bundle_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="process">
+                <toc-element topic="process_README.md"/>
+                <toc-element topic="process_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="notifier">
+                <toc-element topic="notifier_README.md"/>
+                <toc-element topic="notifier_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="monolog-bundle">
+                <toc-element topic="monolog-bundle_README.md"/>
+                <toc-element topic="monolog-bundle_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="mime">
+                <toc-element topic="mime_README.md"/>
+                <toc-element topic="mime_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="mailer">
+                <toc-element topic="mailer_README.md"/>
+                <toc-element topic="mailer_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="intl">
+                <toc-element topic="intl_README.md"/>
+                <toc-element topic="intl_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="http-client">
+                <toc-element topic="http-client_README.md"/>
+                <toc-element topic="http-client_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="form">
+                <toc-element topic="form_README.md"/>
+                <toc-element topic="form_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="expression-language">
+                <toc-element topic="expression-language_README.md"/>
+                <toc-element topic="expression-language_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="doctrine-messenger">
+                <toc-element topic="doctrine-messenger_README.md"/>
+                <toc-element topic="doctrine-messenger_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="asset">
+                <toc-element topic="asset_README.md"/>
+                <toc-element topic="asset_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="stimulus-bundle">
+                <toc-element topic="stimulus-bundle_README.md"/>
+                <toc-element topic="stimulus-bundle_CHANGELOG.md"/>
+                <toc-element toc-title="assets">
+                    <toc-element topic="assets_README.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="ux-turbo">
+                <toc-element topic="symfony_ux-turbo_README.md"/>
+                <toc-element topic="ux-turbo_CHANGELOG.md"/>
+                <toc-element toc-title="assets">
+                    <toc-element topic="ux-turbo_assets_README.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="webpack-encore-bundle">
+                <toc-element topic="webpack-encore-bundle_README.md"/>
+                <toc-element topic="webpack-encore-bundle_CONTRIBUTING.md"/>
+                <toc-element topic="webpack-encore-bundle_CHANGELOG.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="psr">
+            <toc-element toc-title="cache">
+                <toc-element topic="cache_README.md"/>
+                <toc-element topic="cache_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="container">
+                <toc-element topic="container_README.md"/>
+            </toc-element>
+            <toc-element toc-title="event-dispatcher">
+                <toc-element topic="event-dispatcher_README.md"/>
+            </toc-element>
+            <toc-element toc-title="log">
+                <toc-element topic="log_README.md"/>
+            </toc-element>
+            <toc-element toc-title="clock">
+                <toc-element topic="clock_README.md"/>
+                <toc-element topic="clock_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="link">
+                <toc-element topic="link_README.md"/>
+                <toc-element topic="link_LICENSE.md"/>
+                <toc-element topic="link_CHANGELOG.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="doctrine">
+            <toc-element toc-title="event-manager">
+                <toc-element topic="event-manager_UPGRADE.md"/>
+                <toc-element topic="event-manager_README.md"/>
+            </toc-element>
+            <toc-element toc-title="deprecations">
+                <toc-element topic="deprecations_README.md"/>
+            </toc-element>
+            <toc-element toc-title="migrations">
+                <toc-element topic="migrations_UPGRADE.md"/>
+                <toc-element topic="migrations_README.md"/>
+            </toc-element>
+            <toc-element toc-title="persistence">
+                <toc-element topic="persistence_UPGRADE.md"/>
+                <toc-element topic="persistence_README.md"/>
+            </toc-element>
+            <toc-element toc-title="sql-formatter">
+                <toc-element topic="sql-formatter_README.md"/>
+                <toc-element topic="sql-formatter_CONTRIBUTING.md"/>
+            </toc-element>
+            <toc-element toc-title="doctrine-bundle">
+                <toc-element topic="UPGRADE-3.2.md"/>
+                <toc-element topic="UPGRADE-3.1.md"/>
+                <toc-element topic="UPGRADE-3.0.md"/>
+                <toc-element topic="UPGRADE-2.19.md"/>
+                <toc-element topic="UPGRADE-2.18.md"/>
+                <toc-element topic="UPGRADE-2.17.md"/>
+                <toc-element topic="UPGRADE-2.13.md"/>
+                <toc-element topic="UPGRADE-2.12.md"/>
+                <toc-element topic="UPGRADE-2.10.md"/>
+                <toc-element topic="doctrine-bundle_README.md"/>
+            </toc-element>
+            <toc-element toc-title="doctrine-migrations-bundle">
+                <toc-element topic="doctrine-migrations-bundle_UPGRADE.md"/>
+            </toc-element>
+            <toc-element toc-title="lexer">
+                <toc-element topic="lexer_UPGRADE.md"/>
+                <toc-element topic="lexer_README.md"/>
+            </toc-element>
+            <toc-element toc-title="instantiator">
+                <toc-element topic="instantiator_README.md"/>
+            </toc-element>
+            <toc-element toc-title="inflector">
+                <toc-element topic="inflector_README.md"/>
+            </toc-element>
+            <toc-element toc-title="collections">
+                <toc-element topic="UPGRADE.md"/>
+                <toc-element topic="collections_README.md"/>
+                <toc-element topic="collections_CONTRIBUTING.md"/>
+            </toc-element>
+            <toc-element toc-title="orm">
+                <toc-element topic="orm_UPGRADE.md"/>
+                <toc-element topic="orm_SECURITY.md"/>
+                <toc-element topic="orm_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="egulias">
+            <toc-element toc-title="email-validator">
+                <toc-element topic="email-validator_CONTRIBUTING.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="webmozart">
+            <toc-element toc-title="assert">
+                <toc-element topic="assert_README.md"/>
+                <toc-element topic="assert_CHANGELOG.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="phpstan">
+            <toc-element toc-title="phpdoc-parser">
+                <toc-element topic="UPGRADING.md"/>
+                <toc-element topic="phpdoc-parser_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="phpdocumentor">
+            <toc-element toc-title="reflection-common">
+                <toc-element topic="reflection-common_README.md"/>
+            </toc-element>
+            <toc-element toc-title="type-resolver">
+                <toc-element topic="type-resolver_README.md"/>
+            </toc-element>
+            <toc-element toc-title="reflection-docblock">
+                <toc-element topic="reflection-docblock_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="staabm">
+            <toc-element toc-title="side-effects-detector">
+                <toc-element topic="side-effects-detector_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="sebastian">
+            <toc-element toc-title="version">
+                <toc-element topic="version_SECURITY.md"/>
+                <toc-element topic="sebastian_version_README.md"/>
+                <toc-element topic="version_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="type">
+                <toc-element topic="type_SECURITY.md"/>
+                <toc-element topic="type_README.md"/>
+                <toc-element topic="type_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="recursion-context">
+                <toc-element topic="recursion-context_SECURITY.md"/>
+                <toc-element topic="recursion-context_README.md"/>
+                <toc-element topic="recursion-context_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="object-reflector">
+                <toc-element topic="object-reflector_SECURITY.md"/>
+                <toc-element topic="object-reflector_README.md"/>
+                <toc-element topic="object-reflector_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="object-enumerator">
+                <toc-element topic="object-enumerator_SECURITY.md"/>
+                <toc-element topic="object-enumerator_README.md"/>
+                <toc-element topic="object-enumerator_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="global-state">
+                <toc-element topic="global-state_SECURITY.md"/>
+                <toc-element topic="global-state_README.md"/>
+                <toc-element topic="global-state_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="git-state">
+                <toc-element topic="git-state_SECURITY.md"/>
+                <toc-element topic="git-state_README.md"/>
+                <toc-element topic="git-state_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="exporter">
+                <toc-element topic="exporter_SECURITY.md"/>
+                <toc-element topic="exporter_README.md"/>
+                <toc-element topic="exporter_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="environment">
+                <toc-element topic="environment_SECURITY.md"/>
+                <toc-element topic="environment_README.md"/>
+                <toc-element topic="environment_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="diff">
+                <toc-element topic="diff_SECURITY.md"/>
+                <toc-element topic="diff_README.md"/>
+                <toc-element topic="diff_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="comparator">
+                <toc-element topic="comparator_SECURITY.md"/>
+                <toc-element topic="comparator_README.md"/>
+                <toc-element topic="comparator_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="cli-parser">
+                <toc-element topic="cli-parser_SECURITY.md"/>
+                <toc-element topic="cli-parser_README.md"/>
+                <toc-element topic="cli-parser_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="lines-of-code">
+                <toc-element topic="lines-of-code_SECURITY.md"/>
+                <toc-element topic="lines-of-code_README.md"/>
+                <toc-element topic="lines-of-code_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="complexity">
+                <toc-element topic="complexity_SECURITY.md"/>
+                <toc-element topic="complexity_README.md"/>
+                <toc-element topic="complexity_ChangeLog.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="phpunit">
+            <toc-element toc-title="php-timer">
+                <toc-element topic="php-timer_SECURITY.md"/>
+                <toc-element topic="php-timer_README.md"/>
+                <toc-element topic="php-timer_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="php-text-template">
+                <toc-element topic="php-text-template_SECURITY.md"/>
+                <toc-element topic="php-text-template_README.md"/>
+                <toc-element topic="php-text-template_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="php-invoker">
+                <toc-element topic="php-invoker_SECURITY.md"/>
+                <toc-element topic="php-invoker_README.md"/>
+                <toc-element topic="php-invoker_ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="php-file-iterator">
+                <toc-element topic="php-file-iterator_SECURITY.md"/>
+                <toc-element topic="php-file-iterator_README.md"/>
+                <toc-element topic="ChangeLog.md"/>
+            </toc-element>
+            <toc-element toc-title="php-code-coverage">
+                <toc-element topic="php-code-coverage_SECURITY.md"/>
+                <toc-element topic="php-code-coverage_README.md"/>
+                <toc-element topic="ChangeLog-14.1.md"/>
+            </toc-element>
+            <toc-element toc-title="phpunit">
+                <toc-element topic="phpunit_SECURITY.md"/>
+                <toc-element topic="phpunit_README.md"/>
+                <toc-element topic="DEPRECATIONS.md"/>
+                <toc-element topic="ChangeLog-13.1.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="theseer">
+            <toc-element toc-title="tokenizer">
+                <toc-element topic="tokenizer_README.md"/>
+                <toc-element topic="tokenizer_CHANGELOG.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="nikic">
+            <toc-element toc-title="php-parser">
+                <toc-element topic="php-parser_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="phar-io">
+            <toc-element toc-title="version">
+                <toc-element topic="version_README.md"/>
+                <toc-element topic="version_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="manifest">
+                <toc-element topic="manifest_README.md"/>
+                <toc-element topic="manifest_CHANGELOG.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="myclabs">
+            <toc-element toc-title="deep-copy">
+                <toc-element topic="deep-copy_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="twig">
+            <toc-element toc-title="extra-bundle">
+                <toc-element topic="extra-bundle_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="monolog">
+            <toc-element toc-title="monolog">
+                <toc-element topic="monolog_README.md"/>
+                <toc-element topic="monolog_CHANGELOG.md"/>
+            </toc-element>
+        </toc-element>
+    </toc-element>
+    <toc-element toc-title="node_modules">
+        <toc-element toc-title="@webassemblyjs">
+            <toc-element toc-title="ast">
+                <toc-element topic="ast_README.md"/>
+            </toc-element>
+            <toc-element toc-title="floating-point-hex-parser">
+                <toc-element topic="floating-point-hex-parser_README.md"/>
+            </toc-element>
+            <toc-element toc-title="wasm-edit">
+                <toc-element topic="wasm-edit_README.md"/>
+            </toc-element>
+            <toc-element toc-title="wasm-parser">
+                <toc-element topic="wasm-parser_README.md"/>
+            </toc-element>
+            <toc-element toc-title="wast-printer">
+                <toc-element topic="wast-printer_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@babel">
+            <toc-element toc-title="code-frame">
+                <toc-element topic="code-frame_README.md"/>
+            </toc-element>
+            <toc-element toc-title="compat-data">
+                <toc-element topic="compat-data_README.md"/>
+            </toc-element>
+            <toc-element toc-title="core">
+                <toc-element topic="core_README.md"/>
+            </toc-element>
+            <toc-element toc-title="generator">
+                <toc-element topic="generator_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-compilation-targets">
+                <toc-element topic="helper-compilation-targets_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-annotate-as-pure">
+                <toc-element topic="helper-annotate-as-pure_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-create-class-features-plugin">
+                <toc-element topic="helper-create-class-features-plugin_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-define-polyfill-provider">
+                <toc-element topic="helper-define-polyfill-provider_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-create-regexp-features-plugin">
+                <toc-element topic="helper-create-regexp-features-plugin_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-globals">
+                <toc-element topic="helper-globals_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-module-imports">
+                <toc-element topic="helper-module-imports_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-member-expression-to-functions">
+                <toc-element topic="helper-member-expression-to-functions_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-module-transforms">
+                <toc-element topic="helper-module-transforms_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-plugin-utils">
+                <toc-element topic="helper-plugin-utils_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-remap-async-to-generator">
+                <toc-element topic="helper-remap-async-to-generator_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-optimise-call-expression">
+                <toc-element topic="helper-optimise-call-expression_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-replace-supers">
+                <toc-element topic="helper-replace-supers_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-skip-transparent-expression-wrappers">
+                <toc-element topic="helper-skip-transparent-expression-wrappers_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-string-parser">
+                <toc-element topic="helper-string-parser_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-validator-option">
+                <toc-element topic="helper-validator-option_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-validator-identifier">
+                <toc-element topic="helper-validator-identifier_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helper-wrap-function">
+                <toc-element topic="helper-wrap-function_README.md"/>
+            </toc-element>
+            <toc-element toc-title="helpers">
+                <toc-element topic="helpers_README.md"/>
+            </toc-element>
+            <toc-element toc-title="parser">
+                <toc-element topic="parser_README.md"/>
+                <toc-element topic="parser_CHANGELOG.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-bugfix-safari-class-field-initializer-scope">
+                <toc-element topic="plugin-bugfix-safari-class-field-initializer-scope_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-bugfix-firefox-class-in-computed-class-key">
+                <toc-element topic="plugin-bugfix-firefox-class-in-computed-class-key_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-bugfix-v8-spread-parameters-in-optional-chaining">
+                <toc-element topic="plugin-bugfix-v8-spread-parameters-in-optional-chaining_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-bugfix-safari-id-destructuring-collision-in-function-expression">
+                <toc-element topic="plugin-bugfix-safari-id-destructuring-collision-in-function-expression_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-bugfix-v8-static-class-fields-redefine-readonly">
+                <toc-element topic="plugin-bugfix-v8-static-class-fields-redefine-readonly_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-proposal-private-property-in-object">
+                <toc-element topic="plugin-proposal-private-property-in-object_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-syntax-import-attributes">
+                <toc-element topic="plugin-syntax-import-attributes_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-syntax-import-assertions">
+                <toc-element topic="plugin-syntax-import-assertions_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-syntax-unicode-sets-regex">
+                <toc-element topic="plugin-syntax-unicode-sets-regex_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-arrow-functions">
+                <toc-element topic="plugin-transform-arrow-functions_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-async-generator-functions">
+                <toc-element topic="plugin-transform-async-generator-functions_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-async-to-generator">
+                <toc-element topic="plugin-transform-async-to-generator_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-block-scoped-functions">
+                <toc-element topic="plugin-transform-block-scoped-functions_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-block-scoping">
+                <toc-element topic="plugin-transform-block-scoping_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-class-static-block">
+                <toc-element topic="plugin-transform-class-static-block_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-class-properties">
+                <toc-element topic="plugin-transform-class-properties_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-classes">
+                <toc-element topic="plugin-transform-classes_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-computed-properties">
+                <toc-element topic="plugin-transform-computed-properties_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-dotall-regex">
+                <toc-element topic="plugin-transform-dotall-regex_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-destructuring">
+                <toc-element topic="plugin-transform-destructuring_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-duplicate-keys">
+                <toc-element topic="plugin-transform-duplicate-keys_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-duplicate-named-capturing-groups-regex">
+                <toc-element topic="plugin-transform-duplicate-named-capturing-groups-regex_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-explicit-resource-management">
+                <toc-element topic="plugin-transform-explicit-resource-management_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-dynamic-import">
+                <toc-element topic="plugin-transform-dynamic-import_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-export-namespace-from">
+                <toc-element topic="plugin-transform-export-namespace-from_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-json-strings">
+                <toc-element topic="plugin-transform-json-strings_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-literals">
+                <toc-element topic="plugin-transform-literals_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-logical-assignment-operators">
+                <toc-element topic="plugin-transform-logical-assignment-operators_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-member-expression-literals">
+                <toc-element topic="plugin-transform-member-expression-literals_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-modules-amd">
+                <toc-element topic="plugin-transform-modules-amd_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-function-name">
+                <toc-element topic="plugin-transform-function-name_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-modules-umd">
+                <toc-element topic="plugin-transform-modules-umd_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-modules-commonjs">
+                <toc-element topic="plugin-transform-modules-commonjs_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-modules-systemjs">
+                <toc-element topic="plugin-transform-modules-systemjs_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-named-capturing-groups-regex">
+                <toc-element topic="plugin-transform-named-capturing-groups-regex_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-new-target">
+                <toc-element topic="plugin-transform-new-target_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-nullish-coalescing-operator">
+                <toc-element topic="plugin-transform-nullish-coalescing-operator_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-object-rest-spread">
+                <toc-element topic="plugin-transform-object-rest-spread_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-numeric-separator">
+                <toc-element topic="plugin-transform-numeric-separator_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-object-super">
+                <toc-element topic="plugin-transform-object-super_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-optional-chaining">
+                <toc-element topic="plugin-transform-optional-chaining_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-parameters">
+                <toc-element topic="plugin-transform-parameters_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-optional-catch-binding">
+                <toc-element topic="plugin-transform-optional-catch-binding_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-private-methods">
+                <toc-element topic="plugin-transform-private-methods_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-private-property-in-object">
+                <toc-element topic="plugin-transform-private-property-in-object_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-property-literals">
+                <toc-element topic="plugin-transform-property-literals_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-regexp-modifiers">
+                <toc-element topic="plugin-transform-regexp-modifiers_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-regenerator">
+                <toc-element topic="plugin-transform-regenerator_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-reserved-words">
+                <toc-element topic="plugin-transform-reserved-words_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-shorthand-properties">
+                <toc-element topic="plugin-transform-shorthand-properties_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-spread">
+                <toc-element topic="plugin-transform-spread_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-template-literals">
+                <toc-element topic="plugin-transform-template-literals_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-sticky-regex">
+                <toc-element topic="plugin-transform-sticky-regex_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-unicode-escapes">
+                <toc-element topic="plugin-transform-unicode-escapes_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-unicode-property-regex">
+                <toc-element topic="plugin-transform-unicode-property-regex_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-typeof-symbol">
+                <toc-element topic="plugin-transform-typeof-symbol_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-unicode-regex">
+                <toc-element topic="plugin-transform-unicode-regex_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-unicode-sets-regex">
+                <toc-element topic="plugin-transform-unicode-sets-regex_README.md"/>
+            </toc-element>
+            <toc-element toc-title="preset-env">
+                <toc-element topic="preset-env_README.md"/>
+                <toc-element topic="CONTRIBUTING.md"/>
+            </toc-element>
+            <toc-element toc-title="preset-modules">
+                <toc-element topic="preset-modules_README.md"/>
+            </toc-element>
+            <toc-element toc-title="template">
+                <toc-element topic="template_README.md"/>
+            </toc-element>
+            <toc-element toc-title="traverse">
+                <toc-element topic="traverse_README.md"/>
+            </toc-element>
+            <toc-element toc-title="types">
+                <toc-element topic="types_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-exponentiation-operator">
+                <toc-element topic="plugin-transform-exponentiation-operator_README.md"/>
+            </toc-element>
+            <toc-element toc-title="plugin-transform-for-of">
+                <toc-element topic="plugin-transform-for-of_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@symfony">
+            <toc-element toc-title="stimulus-bridge">
+                <toc-element topic="stimulus-bridge_README.md"/>
+                <toc-element toc-title="node_modules">
+                    <toc-element toc-title="loader-utils">
+                        <toc-element topic="node_modules_loader-utils_README.md"/>
+                    </toc-element>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="webpack-encore">
+                <toc-element topic="webpack-encore_README.md"/>
+                <toc-element toc-title="node_modules">
+                    <toc-element toc-title="semver">
+                        <toc-element topic="node_modules_semver_README2.md"/>
+                    </toc-element>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="ux-turbo">
+                <toc-element topic="ux-turbo_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@colordx">
+            <toc-element toc-title="core">
+                <toc-element topic="@colordx_core_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@discoveryjs">
+            <toc-element toc-title="json-ext">
+                <toc-element topic="json-ext_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@hotwired">
+            <toc-element toc-title="stimulus-webpack-helpers">
+                <toc-element topic="stimulus-webpack-helpers_README.md"/>
+                <toc-element topic="stimulus-webpack-helpers_LICENSE.md"/>
+            </toc-element>
+            <toc-element toc-title="stimulus">
+                <toc-element topic="stimulus_README.md"/>
+                <toc-element topic="stimulus_LICENSE.md"/>
+            </toc-element>
+            <toc-element toc-title="turbo">
+                <toc-element topic="turbo_CHANGELOG.md"/>
+                <toc-element topic="turbo_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@jest">
+            <toc-element toc-title="schemas">
+                <toc-element topic="schemas_README.md"/>
+            </toc-element>
+            <toc-element toc-title="pattern">
+                <toc-element topic="pattern_README.md"/>
+            </toc-element>
+            <toc-element toc-title="types">
+                <toc-element topic="@jest_types_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@jridgewell">
+            <toc-element toc-title="gen-mapping">
+                <toc-element topic="gen-mapping_README.md"/>
+            </toc-element>
+            <toc-element toc-title="sourcemap-codec">
+                <toc-element topic="sourcemap-codec_README.md"/>
+            </toc-element>
+            <toc-element toc-title="remapping">
+                <toc-element topic="remapping_README.md"/>
+            </toc-element>
+            <toc-element toc-title="source-map">
+                <toc-element topic="@jridgewell_source-map_README.md"/>
+            </toc-element>
+            <toc-element toc-title="resolve-uri">
+                <toc-element topic="resolve-uri_README.md"/>
+            </toc-element>
+            <toc-element toc-title="trace-mapping">
+                <toc-element topic="trace-mapping_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@kocal">
+            <toc-element toc-title="friendly-errors-webpack-plugin">
+                <toc-element topic="friendly-errors-webpack-plugin_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@sinclair">
+            <toc-element toc-title="typebox">
+                <toc-element topic="typebox_readme.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@types">
+            <toc-element toc-title="eslint">
+                <toc-element topic="eslint_README.md"/>
+            </toc-element>
+            <toc-element toc-title="eslint-scope">
+                <toc-element topic="@types_eslint-scope_README.md"/>
+            </toc-element>
+            <toc-element toc-title="istanbul-lib-coverage">
+                <toc-element topic="istanbul-lib-coverage_README.md"/>
+            </toc-element>
+            <toc-element toc-title="istanbul-reports">
+                <toc-element topic="istanbul-reports_README.md"/>
+            </toc-element>
+            <toc-element toc-title="json-schema">
+                <toc-element topic="json-schema_README.md"/>
+            </toc-element>
+            <toc-element toc-title="webpack-env">
+                <toc-element topic="webpack-env_README.md"/>
+            </toc-element>
+            <toc-element toc-title="yargs-parser">
+                <toc-element topic="@types_yargs-parser_README.md"/>
+            </toc-element>
+            <toc-element toc-title="yargs">
+                <toc-element topic="yargs_README.md"/>
+            </toc-element>
+            <toc-element toc-title="node">
+                <toc-element topic="@types_node_README.md"/>
+            </toc-element>
+            <toc-element toc-title="estree">
+                <toc-element topic="estree_README.md"/>
+            </toc-element>
+            <toc-element toc-title="istanbul-lib-report">
+                <toc-element topic="istanbul-lib-report_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@ungap">
+            <toc-element toc-title="structured-clone">
+                <toc-element topic="structured-clone_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="acorn">
+            <toc-element topic="acorn_README.md"/>
+            <toc-element topic="CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="adjust-sourcemap-loader">
+            <toc-element topic="readme.md"/>
+        </toc-element>
+        <toc-element toc-title="acorn-import-phases">
+            <toc-element topic="acorn-import-phases_README.md"/>
+        </toc-element>
+        <toc-element toc-title="ajv">
+            <toc-element topic="ajv_README.md"/>
+        </toc-element>
+        <toc-element toc-title="ansi-regex">
+            <toc-element topic="ansi-regex_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="ajv-formats">
+            <toc-element topic="ajv-formats_README.md"/>
+        </toc-element>
+        <toc-element toc-title="ansi-styles">
+            <toc-element topic="ansi-styles_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="ajv-keywords">
+            <toc-element topic="ajv-keywords_README.md"/>
+        </toc-element>
+        <toc-element toc-title="babel-loader">
+            <toc-element topic="babel-loader_README.md"/>
+            <toc-element topic="babel-loader_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="babel-plugin-polyfill-corejs2">
+            <toc-element topic="babel-plugin-polyfill-corejs2_README.md"/>
+        </toc-element>
+        <toc-element toc-title="babel-plugin-polyfill-regenerator">
+            <toc-element topic="babel-plugin-polyfill-regenerator_README.md"/>
+        </toc-element>
+        <toc-element toc-title="babel-plugin-polyfill-corejs3">
+            <toc-element topic="babel-plugin-polyfill-corejs3_README.md"/>
+            <toc-element toc-title="core-js-compat">
+                <toc-element topic="babel-plugin-polyfill-corejs3_core-js-compat_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="baseline-browser-mapping">
+            <toc-element topic="baseline-browser-mapping_README.md"/>
+        </toc-element>
+        <toc-element toc-title="boolbase">
+            <toc-element topic="boolbase_README.md"/>
+        </toc-element>
+        <toc-element toc-title="big.js">
+            <toc-element topic="big.js_README.md"/>
+            <toc-element topic="big.js_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="buffer-from">
+            <toc-element topic="buffer-from_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="browserslist">
+            <toc-element topic="browserslist_README.md"/>
+        </toc-element>
+        <toc-element toc-title="caniuse-api">
+            <toc-element topic="caniuse-api_README.md"/>
+            <toc-element topic="caniuse-api_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="caniuse-lite">
+            <toc-element topic="caniuse-lite_README.md"/>
+        </toc-element>
+        <toc-element toc-title="chalk">
+            <toc-element topic="chalk_readme.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="supports-color">
+                    <toc-element topic="node_modules_supports-color_readme.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="chrome-trace-event">
+            <toc-element topic="chrome-trace-event_README.md"/>
+            <toc-element topic="CHANGES.md"/>
+        </toc-element>
+        <toc-element toc-title="clone-deep">
+            <toc-element topic="clone-deep_README.md"/>
+        </toc-element>
+        <toc-element toc-title="ci-info">
+            <toc-element topic="ci-info_README.md"/>
+            <toc-element topic="ci-info_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="color-convert">
+            <toc-element topic="color-convert_README.md"/>
+            <toc-element topic="color-convert_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="color-name">
+            <toc-element topic="color-name_README.md"/>
+        </toc-element>
+        <toc-element toc-title="colorette">
+            <toc-element topic="colorette_README.md"/>
+            <toc-element topic="LICENSE.md"/>
+        </toc-element>
+        <toc-element toc-title="commander">
+            <toc-element topic="Readme.md"/>
+        </toc-element>
+        <toc-element toc-title="consola">
+            <toc-element topic="consola_README.md"/>
+        </toc-element>
+        <toc-element toc-title="convert-source-map">
+            <toc-element topic="convert-source-map_README.md"/>
+        </toc-element>
+        <toc-element toc-title="core-js">
+            <toc-element topic="core-js_README.md"/>
+            <toc-element toc-title="es">
+                <toc-element topic="es_README.md"/>
+            </toc-element>
+            <toc-element toc-title="actual">
+                <toc-element topic="actual_README.md"/>
+            </toc-element>
+            <toc-element toc-title="full">
+                <toc-element topic="full_README.md"/>
+            </toc-element>
+            <toc-element toc-title="stable">
+                <toc-element topic="stable_README.md"/>
+            </toc-element>
+            <toc-element toc-title="stage">
+                <toc-element topic="stage_README.md"/>
+            </toc-element>
+            <toc-element toc-title="web">
+                <toc-element topic="web_README.md"/>
+            </toc-element>
+            <toc-element toc-title="internals">
+                <toc-element topic="internals_README.md"/>
+            </toc-element>
+            <toc-element toc-title="modules">
+                <toc-element topic="modules_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="cross-spawn">
+            <toc-element topic="cross-spawn_README.md"/>
+        </toc-element>
+        <toc-element toc-title="core-js-compat">
+            <toc-element topic="core-js-compat_README.md"/>
+        </toc-element>
+        <toc-element toc-title="css-loader">
+            <toc-element topic="css-loader_README.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="semver">
+                    <toc-element topic="node_modules_semver_README.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="css-declaration-sorter">
+            <toc-element topic="license.md"/>
+            <toc-element topic="css-declaration-sorter_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="css-minimizer-webpack-plugin">
+            <toc-element topic="css-minimizer-webpack-plugin_README.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="jest-worker">
+                    <toc-element topic="node_modules_jest-worker_README.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="css-select">
+            <toc-element topic="css-select_README.md"/>
+        </toc-element>
+        <toc-element toc-title="css-tree">
+            <toc-element topic="css-tree_README.md"/>
+        </toc-element>
+        <toc-element toc-title="cssesc">
+            <toc-element topic="cssesc_README.md"/>
+        </toc-element>
+        <toc-element toc-title="css-what">
+            <toc-element topic="css-what_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="cssnano">
+            <toc-element topic="cssnano_README.md"/>
+        </toc-element>
+        <toc-element toc-title="cssnano-preset-default">
+            <toc-element topic="cssnano-preset-default_README.md"/>
+        </toc-element>
+        <toc-element toc-title="cssnano-utils">
+            <toc-element topic="cssnano-utils_README.md"/>
+        </toc-element>
+        <toc-element toc-title="csso">
+            <toc-element topic="csso_README.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="css-tree">
+                    <toc-element topic="node_modules_css-tree_README.md"/>
+                </toc-element>
+                <toc-element toc-title="mdn-data">
+                    <toc-element topic="node_modules_mdn-data_README.md"/>
+                    <toc-element topic="mdn-data_CHANGELOG.md"/>
+                    <toc-element toc-title="css">
+                        <toc-element topic="css_readme.md"/>
+                    </toc-element>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="debug">
+            <toc-element topic="debug_README.md"/>
+        </toc-element>
+        <toc-element toc-title="dom-converter">
+            <toc-element topic="dom-converter_README.md"/>
+        </toc-element>
+        <toc-element toc-title="domelementtype">
+            <toc-element topic="domelementtype_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="dom-serializer">
+            <toc-element topic="dom-serializer_README.md"/>
+        </toc-element>
+        <toc-element toc-title="domhandler">
+            <toc-element topic="domhandler_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="domutils">
+            <toc-element topic="domutils_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="electron-to-chromium">
+            <toc-element topic="electron-to-chromium_README.md"/>
+        </toc-element>
+        <toc-element toc-title="emojis-list">
+            <toc-element topic="emojis-list_README.md"/>
+            <toc-element topic="emojis-list_LICENSE.md"/>
+            <toc-element topic="emojis-list_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="enhanced-resolve">
+            <toc-element topic="enhanced-resolve_README.md"/>
+        </toc-element>
+        <toc-element toc-title="emoji-regex">
+            <toc-element topic="emoji-regex_README.md"/>
+        </toc-element>
+        <toc-element toc-title="entities">
+            <toc-element topic="entities_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="envinfo">
+            <toc-element topic="envinfo_README.md"/>
+        </toc-element>
+        <toc-element toc-title="error-stack-parser">
+            <toc-element topic="error-stack-parser_README.md"/>
+        </toc-element>
+        <toc-element toc-title="es-errors">
+            <toc-element topic="es-errors_README.md"/>
+            <toc-element topic="es-errors_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="escalade">
+            <toc-element topic="escalade_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="eslint-scope">
+            <toc-element topic="eslint-scope_README.md"/>
+            <toc-element topic="eslint-scope_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="es-module-lexer">
+            <toc-element topic="es-module-lexer_README.md"/>
+        </toc-element>
+        <toc-element toc-title="esrecurse">
+            <toc-element topic="esrecurse_README.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="estraverse">
+                    <toc-element topic="node_modules_estraverse_README.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="esutils">
+            <toc-element topic="esutils_README.md"/>
+        </toc-element>
+        <toc-element toc-title="estraverse">
+            <toc-element topic="estraverse_README.md"/>
+        </toc-element>
+        <toc-element toc-title="events">
+            <toc-element topic="security.md"/>
+            <toc-element topic="events_Readme.md"/>
+            <toc-element topic="History.md"/>
+        </toc-element>
+        <toc-element toc-title="fast-deep-equal">
+            <toc-element topic="fast-deep-equal_README.md"/>
+        </toc-element>
+        <toc-element toc-title="fast-uri">
+            <toc-element topic="fast-uri_README.md"/>
+        </toc-element>
+        <toc-element toc-title="fastest-levenshtein">
+            <toc-element topic="fastest-levenshtein_README.md"/>
+            <toc-element topic="fastest-levenshtein_LICENSE.md"/>
+        </toc-element>
+        <toc-element toc-title="find-up">
+            <toc-element topic="find-up_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="function-bind">
+            <toc-element topic="function-bind_README.md"/>
+            <toc-element topic="function-bind_CHANGELOG.md"/>
+            <toc-element toc-title=".github">
+                <toc-element topic=".github_SECURITY.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="flat">
+            <toc-element topic="flat_README.md"/>
+        </toc-element>
+        <toc-element toc-title="gensync">
+            <toc-element topic="gensync_README.md"/>
+        </toc-element>
+        <toc-element toc-title="graceful-fs">
+            <toc-element topic="graceful-fs_README.md"/>
+        </toc-element>
+        <toc-element toc-title="glob-to-regexp">
+            <toc-element topic="glob-to-regexp_README.md"/>
+        </toc-element>
+        <toc-element toc-title="has-flag">
+            <toc-element topic="has-flag_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="hasown">
+            <toc-element topic="hasown_README.md"/>
+            <toc-element topic="hasown_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="htmlparser2">
+            <toc-element topic="htmlparser2_README.md"/>
+        </toc-element>
+        <toc-element toc-title="import-local">
+            <toc-element topic="import-local_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="icss-utils">
+            <toc-element topic="icss-utils_README.md"/>
+            <toc-element topic="icss-utils_LICENSE.md"/>
+            <toc-element topic="icss-utils_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="is-fullwidth-code-point">
+            <toc-element topic="is-fullwidth-code-point_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="is-core-module">
+            <toc-element topic="is-core-module_README.md"/>
+            <toc-element topic="is-core-module_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="interpret">
+            <toc-element topic="interpret_README.md"/>
+        </toc-element>
+        <toc-element toc-title="is-plain-object">
+            <toc-element topic="is-plain-object_README.md"/>
+        </toc-element>
+        <toc-element toc-title="isexe">
+            <toc-element topic="isexe_README.md"/>
+        </toc-element>
+        <toc-element toc-title="isobject">
+            <toc-element topic="isobject_README.md"/>
+        </toc-element>
+        <toc-element toc-title="jest-util">
+            <toc-element topic="jest-util_Readme.md"/>
+        </toc-element>
+        <toc-element toc-title="jest-worker">
+            <toc-element topic="jest-worker_README.md"/>
+        </toc-element>
+        <toc-element toc-title="js-tokens">
+            <toc-element topic="js-tokens_README.md"/>
+            <toc-element topic="js-tokens_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="jsesc">
+            <toc-element topic="jsesc_README.md"/>
+        </toc-element>
+        <toc-element toc-title="json-schema-traverse">
+            <toc-element topic="json-schema-traverse_README.md"/>
+        </toc-element>
+        <toc-element toc-title="json5">
+            <toc-element topic="json5_README.md"/>
+            <toc-element topic="json5_LICENSE.md"/>
+        </toc-element>
+        <toc-element toc-title="kind-of">
+            <toc-element topic="kind-of_README.md"/>
+            <toc-element topic="kind-of_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="lilconfig">
+            <toc-element topic="lilconfig_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="loader-utils">
+            <toc-element topic="loader-utils_README.md"/>
+        </toc-element>
+        <toc-element toc-title="loader-runner">
+            <toc-element topic="loader-runner_README.md"/>
+        </toc-element>
+        <toc-element toc-title="locate-path">
+            <toc-element topic="locate-path_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="lodash.debounce">
+            <toc-element topic="lodash.debounce_README.md"/>
+        </toc-element>
+        <toc-element toc-title="lodash.memoize">
+            <toc-element topic="lodash.memoize_README.md"/>
+        </toc-element>
+        <toc-element toc-title="lodash.uniq">
+            <toc-element topic="lodash.uniq_README.md"/>
+        </toc-element>
+        <toc-element toc-title="lru-cache">
+            <toc-element topic="lru-cache_README.md"/>
+        </toc-element>
+        <toc-element toc-title="merge-stream">
+            <toc-element topic="merge-stream_README.md"/>
+        </toc-element>
+        <toc-element toc-title="mdn-data">
+            <toc-element topic="mdn-data_README.md"/>
+        </toc-element>
+        <toc-element toc-title="mini-css-extract-plugin">
+            <toc-element topic="mini-css-extract-plugin_README.md"/>
+        </toc-element>
+        <toc-element toc-title="mime-db">
+            <toc-element topic="mime-db_README.md"/>
+            <toc-element topic="HISTORY.md"/>
+        </toc-element>
+        <toc-element toc-title="ms">
+            <toc-element topic="ms_readme.md"/>
+            <toc-element topic="ms_license.md"/>
+        </toc-element>
+        <toc-element toc-title="nanoid">
+            <toc-element topic="nanoid_README.md"/>
+        </toc-element>
+        <toc-element toc-title="@webpack-cli">
+            <toc-element toc-title="configtest">
+                <toc-element topic="configtest_README.md"/>
+            </toc-element>
+            <toc-element toc-title="serve">
+                <toc-element topic="serve_README.md"/>
+            </toc-element>
+            <toc-element toc-title="info">
+                <toc-element topic="info_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@xtuc">
+            <toc-element toc-title="ieee754">
+                <toc-element topic="ieee754_README.md"/>
+            </toc-element>
+            <toc-element toc-title="long">
+                <toc-element topic="long_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="neo-async">
+            <toc-element topic="neo-async_README.md"/>
+        </toc-element>
+        <toc-element toc-title="lodash">
+            <toc-element topic="lodash_README.md"/>
+        </toc-element>
+        <toc-element toc-title="nth-check">
+            <toc-element topic="nth-check_README.md"/>
+        </toc-element>
+        <toc-element toc-title="node-releases">
+            <toc-element topic="node-releases_README.md"/>
+        </toc-element>
+        <toc-element toc-title="p-limit">
+            <toc-element topic="p-limit_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="p-try">
+            <toc-element topic="p-try_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="p-locate">
+            <toc-element topic="p-locate_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="path-key">
+            <toc-element topic="path-key_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="path-exists">
+            <toc-element topic="path-exists_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="picocolors">
+            <toc-element topic="picocolors_README.md"/>
+        </toc-element>
+        <toc-element toc-title="picomatch">
+            <toc-element topic="picomatch_README.md"/>
+        </toc-element>
+        <toc-element toc-title="path-parse">
+            <toc-element topic="path-parse_README.md"/>
+        </toc-element>
+        <toc-element toc-title="pkg-dir">
+            <toc-element topic="pkg-dir_readme.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="find-up">
+                    <toc-element topic="node_modules_find-up_readme.md"/>
+                </toc-element>
+                <toc-element toc-title="p-limit">
+                    <toc-element topic="node_modules_p-limit_readme.md"/>
+                </toc-element>
+                <toc-element toc-title="locate-path">
+                    <toc-element topic="node_modules_locate-path_readme.md"/>
+                </toc-element>
+                <toc-element toc-title="p-locate">
+                    <toc-element topic="node_modules_p-locate_readme.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="postcss">
+            <toc-element topic="postcss_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-colormin">
+            <toc-element topic="postcss-colormin_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-calc">
+            <toc-element topic="postcss-calc_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-convert-values">
+            <toc-element topic="postcss-convert-values_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-discard-comments">
+            <toc-element topic="postcss-discard-comments_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-discard-duplicates">
+            <toc-element topic="postcss-discard-duplicates_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-discard-overridden">
+            <toc-element topic="postcss-discard-overridden_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-discard-empty">
+            <toc-element topic="postcss-discard-empty_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-merge-rules">
+            <toc-element topic="postcss-merge-rules_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-minify-font-values">
+            <toc-element topic="postcss-minify-font-values_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-minify-gradients">
+            <toc-element topic="postcss-minify-gradients_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-minify-params">
+            <toc-element topic="postcss-minify-params_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-minify-selectors">
+            <toc-element topic="postcss-minify-selectors_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-modules-extract-imports">
+            <toc-element topic="postcss-modules-extract-imports_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-modules-scope">
+            <toc-element topic="postcss-modules-scope_README.md"/>
+            <toc-element topic="postcss-modules-scope_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-modules-values">
+            <toc-element topic="postcss-modules-values_README.md"/>
+            <toc-element topic="postcss-modules-values_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-modules-local-by-default">
+            <toc-element topic="postcss-modules-local-by-default_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-normalize-charset">
+            <toc-element topic="postcss-normalize-charset_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-normalize-display-values">
+            <toc-element topic="postcss-normalize-display-values_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-normalize-repeat-style">
+            <toc-element topic="postcss-normalize-repeat-style_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-normalize-positions">
+            <toc-element topic="postcss-normalize-positions_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-normalize-string">
+            <toc-element topic="postcss-normalize-string_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-normalize-url">
+            <toc-element topic="postcss-normalize-url_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-normalize-timing-functions">
+            <toc-element topic="postcss-normalize-timing-functions_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-normalize-unicode">
+            <toc-element topic="postcss-normalize-unicode_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-normalize-whitespace">
+            <toc-element topic="postcss-normalize-whitespace_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-reduce-initial">
+            <toc-element topic="postcss-reduce-initial_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-ordered-values">
+            <toc-element topic="postcss-ordered-values_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-reduce-transforms">
+            <toc-element topic="postcss-reduce-transforms_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-selector-parser">
+            <toc-element topic="postcss-selector-parser_README.md"/>
+            <toc-element topic="API.md"/>
+            <toc-element topic="postcss-selector-parser_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-svgo">
+            <toc-element topic="postcss-svgo_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-unique-selectors">
+            <toc-element topic="postcss-unique-selectors_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-value-parser">
+            <toc-element topic="postcss-value-parser_README.md"/>
+        </toc-element>
+        <toc-element toc-title="pretty-error">
+            <toc-element topic="pretty-error_README.md"/>
+            <toc-element topic="pretty-error_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="regenerate">
+            <toc-element topic="regenerate_README.md"/>
+        </toc-element>
+        <toc-element toc-title="rechoir">
+            <toc-element topic="rechoir_README.md"/>
+            <toc-element topic="rechoir_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="regenerate-unicode-properties">
+            <toc-element topic="regenerate-unicode-properties_README.md"/>
+        </toc-element>
+        <toc-element toc-title="regex-parser">
+            <toc-element topic="regex-parser_README.md"/>
+        </toc-element>
+        <toc-element toc-title="regenerator-runtime">
+            <toc-element topic="regenerator-runtime_README.md"/>
+        </toc-element>
+        <toc-element toc-title="regexpu-core">
+            <toc-element topic="regexpu-core_README.md"/>
+        </toc-element>
+        <toc-element toc-title="regjsgen">
+            <toc-element topic="regjsgen_README.md"/>
+        </toc-element>
+        <toc-element toc-title="regjsparser">
+            <toc-element topic="regjsparser_README.md"/>
+        </toc-element>
+        <toc-element toc-title="renderkid">
+            <toc-element topic="SECURITY.md"/>
+            <toc-element topic="renderkid_README.md"/>
+            <toc-element topic="renderkid_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="require-from-string">
+            <toc-element topic="require-from-string_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="resolve-cwd">
+            <toc-element topic="resolve-cwd_readme.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="resolve-from">
+                    <toc-element topic="node_modules_resolve-from_readme.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="resolve-from">
+            <toc-element topic="resolve-from_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="resolve">
+            <toc-element topic="resolve_SECURITY.md"/>
+            <toc-element toc-title=".claude">
+                <toc-element topic="notes.md"/>
+            </toc-element>
+            <toc-element toc-title=".github">
+                <toc-element topic="THREAT_MODEL.md"/>
+                <toc-element topic="INCIDENT_RESPONSE_PROCESS.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="resolve-url-loader">
+            <toc-element topic="resolve-url-loader_README.md"/>
+            <toc-element topic="resolve-url-loader_CHANGELOG.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="convert-source-map">
+                    <toc-element topic="node_modules_convert-source-map_README.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="docs">
+                <toc-element topic="how-it-works.md"/>
+                <toc-element topic="troubleshooting.md"/>
+                <toc-element topic="contributing.md"/>
+                <toc-element topic="advanced-features.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="sax">
+            <toc-element topic="sax_README.md"/>
+            <toc-element topic="sax_LICENSE.md"/>
+        </toc-element>
+        <toc-element toc-title="schema-utils">
+            <toc-element topic="schema-utils_README.md"/>
+        </toc-element>
+        <toc-element toc-title="semver">
+            <toc-element topic="semver_README.md"/>
+        </toc-element>
+        <toc-element toc-title="serialize-javascript">
+            <toc-element topic="serialize-javascript_README.md"/>
+        </toc-element>
+        <toc-element toc-title="shebang-command">
+            <toc-element topic="shebang-command_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="shallow-clone">
+            <toc-element topic="shallow-clone_README.md"/>
+        </toc-element>
+        <toc-element toc-title="source-list-map">
+            <toc-element topic="source-list-map_README.md"/>
+        </toc-element>
+        <toc-element toc-title="shebang-regex">
+            <toc-element topic="shebang-regex_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="source-map">
+            <toc-element topic="source-map_README.md"/>
+            <toc-element topic="source-map_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="source-map-js">
+            <toc-element topic="source-map-js_README.md"/>
+        </toc-element>
+        <toc-element toc-title="source-map-support">
+            <toc-element topic="source-map-support_README.md"/>
+            <toc-element topic="source-map-support_LICENSE.md"/>
+        </toc-element>
+        <toc-element toc-title="string-width">
+            <toc-element topic="string-width_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="strip-ansi">
+            <toc-element topic="strip-ansi_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="stackframe">
+            <toc-element topic="stackframe_README.md"/>
+        </toc-element>
+        <toc-element toc-title="style-loader">
+            <toc-element topic="style-loader_README.md"/>
+        </toc-element>
+        <toc-element toc-title="supports-color">
+            <toc-element topic="supports-color_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="stylehacks">
+            <toc-element topic="stylehacks_README.md"/>
+        </toc-element>
+        <toc-element toc-title="svgo">
+            <toc-element topic="svgo_README.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="commander">
+                    <toc-element topic="commander_Readme.md"/>
+                </toc-element>
+                <toc-element toc-title="css-select">
+                    <toc-element topic="node_modules_css-select_README.md"/>
+                </toc-element>
+                <toc-element toc-title="dom-serializer">
+                    <toc-element topic="node_modules_dom-serializer_README.md"/>
+                </toc-element>
+                <toc-element toc-title="domutils">
+                    <toc-element topic="node_modules_domutils_readme.md"/>
+                </toc-element>
+                <toc-element toc-title="domhandler">
+                    <toc-element topic="node_modules_domhandler_readme.md"/>
+                </toc-element>
+                <toc-element toc-title="entities">
+                    <toc-element topic="node_modules_entities_readme.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="supports-preserve-symlinks-flag">
+            <toc-element topic="supports-preserve-symlinks-flag_README.md"/>
+            <toc-element topic="supports-preserve-symlinks-flag_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="tapable">
+            <toc-element topic="tapable_README.md"/>
+        </toc-element>
+        <toc-element toc-title="terser">
+            <toc-element topic="PATRONS.md"/>
+            <toc-element topic="terser_README.md"/>
+            <toc-element topic="terser_CHANGELOG.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="commander">
+                    <toc-element topic="node_modules_commander_Readme.md"/>
+                    <toc-element topic="commander_CHANGELOG.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="terser-webpack-plugin">
+            <toc-element topic="terser-webpack-plugin_README.md"/>
+        </toc-element>
+        <toc-element toc-title="tmp">
+            <toc-element topic="tmp_README.md"/>
+        </toc-element>
+        <toc-element toc-title="unicode-canonical-property-names-ecmascript">
+            <toc-element topic="unicode-canonical-property-names-ecmascript_README.md"/>
+        </toc-element>
+        <toc-element toc-title="unicode-match-property-ecmascript">
+            <toc-element topic="unicode-match-property-ecmascript_README.md"/>
+        </toc-element>
+        <toc-element toc-title="undici-types">
+            <toc-element topic="undici-types_README.md"/>
+        </toc-element>
+        <toc-element toc-title="unicode-match-property-value-ecmascript">
+            <toc-element topic="unicode-match-property-value-ecmascript_README.md"/>
+        </toc-element>
+        <toc-element toc-title="unicode-property-aliases-ecmascript">
+            <toc-element topic="unicode-property-aliases-ecmascript_README.md"/>
+        </toc-element>
+        <toc-element toc-title="util-deprecate">
+            <toc-element topic="util-deprecate_README.md"/>
+            <toc-element topic="util-deprecate_History.md"/>
+        </toc-element>
+        <toc-element toc-title="update-browserslist-db">
+            <toc-element topic="update-browserslist-db_README.md"/>
+        </toc-element>
+        <toc-element toc-title="utila">
+            <toc-element topic="utila_README.md"/>
+        </toc-element>
+        <toc-element toc-title="watchpack">
+            <toc-element topic="watchpack_README.md"/>
+        </toc-element>
+        <toc-element toc-title="webpack">
+            <toc-element topic="webpack_README.md"/>
+        </toc-element>
+        <toc-element toc-title="webpack-cli">
+            <toc-element topic="webpack-cli_README.md"/>
+        </toc-element>
+        <toc-element toc-title="webpack-manifest-plugin">
+            <toc-element topic="webpack-manifest-plugin_README.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="webpack-sources">
+                    <toc-element topic="node_modules_webpack-sources_README.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="webpack-merge">
+            <toc-element topic="webpack-merge_README.md"/>
+        </toc-element>
+        <toc-element toc-title="which">
+            <toc-element topic="which_README.md"/>
+            <toc-element topic="which_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="webpack-sources">
+            <toc-element topic="webpack-sources_README.md"/>
+        </toc-element>
+        <toc-element toc-title="wildcard">
+            <toc-element topic="wildcard_README.md"/>
+        </toc-element>
+        <toc-element toc-title="yargs-parser">
+            <toc-element topic="yargs-parser_README.md"/>
+            <toc-element topic="yargs-parser_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="yocto-queue">
+            <toc-element topic="yocto-queue_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="yallist">
+            <toc-element topic="yallist_README.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-merge-longhand">
+            <toc-element topic="postcss-merge-longhand_README.md"/>
+        </toc-element>
+        <toc-element toc-title="@alloc">
+            <toc-element toc-title="quick-lru">
+                <toc-element topic="quick-lru_readme.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="@tailwindcss">
+            <toc-element toc-title="node">
+                <toc-element topic="node_README.md"/>
+            </toc-element>
+            <toc-element toc-title="oxide-linux-x64-musl">
+                <toc-element topic="oxide-linux-x64-musl_README.md"/>
+            </toc-element>
+            <toc-element toc-title="oxide-linux-x64-gnu">
+                <toc-element topic="oxide-linux-x64-gnu_README.md"/>
+            </toc-element>
+            <toc-element toc-title="postcss">
+                <toc-element topic="@tailwindcss_postcss_README.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="argparse">
+            <toc-element topic="argparse_README.md"/>
+            <toc-element topic="argparse_CHANGELOG.md"/>
+        </toc-element>
+        <toc-element toc-title="callsites">
+            <toc-element topic="callsites_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="cosmiconfig">
+            <toc-element topic="cosmiconfig_README.md"/>
+        </toc-element>
+        <toc-element toc-title="detect-libc">
+            <toc-element topic="detect-libc_README.md"/>
+        </toc-element>
+        <toc-element toc-title="env-paths">
+            <toc-element topic="env-paths_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="error-ex">
+            <toc-element topic="error-ex_README.md"/>
+        </toc-element>
+        <toc-element toc-title="import-fresh">
+            <toc-element topic="import-fresh_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="is-arrayish">
+            <toc-element topic="is-arrayish_README.md"/>
+        </toc-element>
+        <toc-element toc-title="jiti">
+            <toc-element topic="jiti_README.md"/>
+        </toc-element>
+        <toc-element toc-title="js-yaml">
+            <toc-element topic="js-yaml_README.md"/>
+        </toc-element>
+        <toc-element toc-title="json-parse-even-better-errors">
+            <toc-element topic="json-parse-even-better-errors_README.md"/>
+            <toc-element topic="json-parse-even-better-errors_CHANGELOG.md"/>
+            <toc-element topic="json-parse-even-better-errors_LICENSE.md"/>
+        </toc-element>
+        <toc-element toc-title="lightningcss">
+            <toc-element topic="lightningcss_README.md"/>
+        </toc-element>
+        <toc-element toc-title="lightningcss-linux-x64-gnu">
+            <toc-element topic="lightningcss-linux-x64-gnu_README.md"/>
+        </toc-element>
+        <toc-element toc-title="lightningcss-linux-x64-musl">
+            <toc-element topic="lightningcss-linux-x64-musl_README.md"/>
+        </toc-element>
+        <toc-element toc-title="lines-and-columns">
+            <toc-element topic="lines-and-columns_README.md"/>
+        </toc-element>
+        <toc-element toc-title="magic-string">
+            <toc-element topic="magic-string_README.md"/>
+        </toc-element>
+        <toc-element toc-title="parent-module">
+            <toc-element topic="parent-module_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="parse-json">
+            <toc-element topic="parse-json_readme.md"/>
+        </toc-element>
+        <toc-element toc-title="postcss-loader">
+            <toc-element topic="postcss-loader_README.md"/>
+            <toc-element toc-title="node_modules">
+                <toc-element toc-title="semver">
+                    <toc-element topic="node_modules_semver_README1.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="tailwindcss">
+            <toc-element topic="tailwindcss_README.md"/>
+        </toc-element>
+    </toc-element>
+</instance-profile>
