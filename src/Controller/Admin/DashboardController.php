@@ -16,9 +16,16 @@ final class DashboardController extends AbstractController
     #[Route('/admin/dashboard', name: 'app_admin_dashboard_index')]
     public function index(): Response
     {
-        $application = $this->settings->getSite();
-        return $this->render('admin/dashboard/index.html.twig', [
-            'controller_name' => 'DashboardController',
+        return $this->render('admin/dashboard/index.html.twig', []);
+    }
+
+    #[Route('/admin/dashboard/aside', name: 'app_admin_dashboard_settings')]
+    public function settings(): Response
+    {
+        $application = $this->settings->get('application');
+
+        return $this->render('composants/admin/sidebar.html.twig', [
+            'application' => $application,
         ]);
     }
 }

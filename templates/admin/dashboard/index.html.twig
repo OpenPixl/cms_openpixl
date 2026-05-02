@@ -1,20 +1,121 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block title %}Hello DashboradController!{% endblock %}
+{% block title %}Dashboard{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block page_title %}Tableau de bord{% endblock %}
+{% block page_subtitle %}
+    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">
+        Bienvenue, {{ app.user ? app.user.firstName : 'Admin' }}.
+    </p>
+{% endblock %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block topbar_title %}Dashboard{% endblock %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/app/src/Controller/Admin/DashboradController.php</code></li>
-        <li>Your template at <code>/app/templates/admin/dashborad/index.html.twig</code></li>
-    </ul>
-</div>
+{% block topbar_action %}
+    <a href="#"
+       class="inline-flex items-center gap-1.5 h-8 px-3 text-sm font-medium rounded-lg
+              bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900
+              hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors shrink-0">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg>
+        Nouveau
+    </a>
+{% endblock %}
+
+{% block page_content %}
+
+    {# ── Stats ── #}
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+        {% set stats = [
+            { label: 'Revenus du mois',   value: stats.revenue|default('48 320 €'),  change: '+12,4%',  up: true },
+            { label: 'Commandes actives', value: stats.orders|default('342'),         change: '+8 aujourd\'hui', up: true },
+            { label: 'Nouveaux clients',  value: stats.customers|default('1 204'),    change: '-3,1%',   up: false },
+            { label: 'Conversion',        value: stats.conversion|default('3,7 %'),   change: '+0,5 pts', up: true },
+        ] %}
+        {% for s in stats %}
+            <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-1.5">{{ s.label }}</p>
+                <p class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{{ s.value }}</p>
+                <p class="text-xs mt-1 {{ s.up ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500 dark:text-red-400' }}">
+                    {{ s.up ? '↑' : '↓' }} {{ s.change }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+
+    {# ── Row : table + activity ── #}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+
+        {# Recent orders #}
+        <div class="lg:col-span-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3.5 border-b border-zinc-100 dark:border-zinc-800">
+                <h2 class="text-sm font-medium text-zinc-900 dark:text-zinc-100">Commandes récentes</h2>
+                <a href="#" class="text-xs text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors">
+                    Voir tout →
+                </a>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                    <tr class="border-b border-zinc-100 dark:border-zinc-800">
+                        <th class="text-left text-[11px] font-medium text-zinc-400 uppercase tracking-wider px-5 py-2.5">N°</th>
+                        <th class="text-left text-[11px] font-medium text-zinc-400 uppercase tracking-wider px-3 py-2.5">Client</th>
+                        <th class="text-left text-[11px] font-medium text-zinc-400 uppercase tracking-wider px-3 py-2.5 hidden md:table-cell">Produit</th>
+                        <th class="text-right text-[11px] font-medium text-zinc-400 uppercase tracking-wider px-3 py-2.5">Montant</th>
+                        <th class="text-right text-[11px] font-medium text-zinc-400 uppercase tracking-wider px-5 py-2.5">Statut</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-100 dark:divide-zinc-800">
+                    {% for order in recent_orders|default([
+                        { id: '4822', client: 'Paul Durand',    product: 'Clavier mécanique',  amount: '129 €', status: 'delivered' },
+                        { id: '4821', client: 'Lucie Martin',   product: 'Souris ergonomique', amount: '79 €',  status: 'processing' },
+                        { id: '4820', client: 'Ahmed Benali',   product: 'Écran 27" 4K',       amount: '449 €', status: 'delivered' },
+                        { id: '4819', client: 'Sophie Bernard', product: 'Webcam HD',           amount: '99 €',  status: 'failed' },
+                        { id: '4818', client: 'Nathalie Petit', product: 'Hub USB-C',           amount: '55 €',  status: 'pending' },
+                    ]) %}
+                        <tr class="hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors">
+                            <td class="px-5 py-3 font-mono text-xs text-zinc-400">#{{ order.id }}</td>
+                            <td class="px-3 py-3 font-medium text-zinc-800 dark:text-zinc-200">{{ order.client }}</td>
+                            <td class="px-3 py-3 text-zinc-500 dark:text-zinc-400 hidden md:table-cell">{{ order.product }}</td>
+                            <td class="px-3 py-3 text-right font-medium text-zinc-900 dark:text-zinc-100">{{ order.amount }}</td>
+                            <td class="px-5 py-3 text-right">
+                                {% include 'composants/admin/badge.html.twig' with { status: order.status } %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        {# Activity feed #}
+        <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl">
+            <div class="flex items-center justify-between px-5 py-3.5 border-b border-zinc-100 dark:border-zinc-800">
+                <h2 class="text-sm font-medium text-zinc-900 dark:text-zinc-100">Activité</h2>
+            </div>
+            <ul class="divide-y divide-zinc-100 dark:divide-zinc-800">
+                {% for item in activity|default([
+                    { color: 'emerald', text: 'Commande #4821 confirmée — Lucie M.', time: 'il y a 3 min' },
+                    { color: 'blue',    text: 'Nouvel inscrit — thomas@gmail.com',   time: 'il y a 14 min' },
+                    { color: 'red',     text: 'Paiement échoué — Commande #4819',    time: 'il y a 42 min' },
+                    { color: 'amber',   text: 'Stock faible — Écouteurs Pro X',      time: 'il y a 1h' },
+                    { color: 'emerald', text: 'Rapport mensuel généré',              time: 'il y a 2h' },
+                ]) %}
+                    <li class="flex items-start gap-3 px-5 py-3">
+                        {% set dot_colors = {
+                            emerald: 'bg-emerald-500',
+                            blue:    'bg-blue-500',
+                            red:     'bg-red-500',
+                            amber:   'bg-amber-500',
+                        } %}
+                        <span class="mt-1.5 w-2 h-2 rounded-full shrink-0 {{ dot_colors[item.color]|default('bg-zinc-400') }}"></span>
+                        <div class="min-w-0">
+                            <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-snug">{{ item.text }}</p>
+                            <p class="text-[10px] text-zinc-400 mt-0.5">{{ item.time }}</p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
 {% endblock %}

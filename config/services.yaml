@@ -24,7 +24,7 @@ services:
 
     App\EventListener\MaintenanceListener:
         tags:
-            - { name: kernel.event_listener, event: kernel.request, priority: 31 }
+            - { name: kernel.event_listener, event: kernel.request, priority: 100 }
 
     App\Service\AppSettingsService:
         arguments:

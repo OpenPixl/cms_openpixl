@@ -1,0 +1,123 @@
+{#
+Sidebar component
+Usage: {% include 'components/sidebar.html.twig' %}
+Variable `current_route` is resolved automatically from app.request.attributes.get('_route')
+#}
+{% set route = app.request.attributes.get('_route') %}
+
+<aside
+    id="sidebar"
+    class="flex flex-col w-56 shrink-0 bg-white dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 transition-all duration-200"
+>
+    {# Logo #}
+    <div class="flex items-center gap-2.5 h-12 px-4 border-b border-zinc-200 dark:border-zinc-800 shrink-0">
+        <div class="w-7 h-7 rounded-md bg-zinc-900 dark:bg-zinc-100 flex items-center justify-center">
+            <svg class="w-4 h-4 fill-white dark:fill-zinc-900" viewBox="0 0 16 16">
+                <path d="M8 1L14 5v6l-6 4L2 11V5z"/>
+            </svg>
+        </div>
+        <span class="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+            {{ settings.application|default('Acme Corp') }}
+        </span>
+    </div>
+
+    {# Navigation #}
+    <nav class="flex-1 overflow-y-auto px-2 py-3 space-y-5">
+
+        {# Section : Général #}
+        <div>
+            <p class="px-2 mb-1 text-[10px] font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+                Général
+            </p>
+            {{ _self.nav_item('admin_dashboard',   route, path('app_admin_dashboard_index'),  'dashboard',  'Dashboard') }}
+            {{ _self.nav_item('admin_analytics',   route, path('app_admin_dashboard_index'),  'chart',      'Analytiques') }}
+            {{ _self.nav_item('admin_reports',     route, path('app_admin_dashboard_index'),    'document',   'Rapports') }}
+        </div>
+
+        {# Section : Gestion #}
+        <div>
+            <p class="px-2 mb-1 text-[10px] font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+                Gestion
+            </p>
+            {{ _self.nav_item('admin_users',    route, path('app_admin_dashboard_index'),    'users',   'Utilisateurs',  '128') }}
+            {{ _self.nav_item('admin_orders',   route, path('app_admin_dashboard_index'),   'orders',  'Commandes',     null, true) }}
+            {{ _self.nav_item('admin_products', route, path('app_admin_dashboard_index'), 'box',     'Produits') }}
+            {{ _self.nav_item('admin_content',  route, path('app_admin_dashboard_index'),  'file',    'Contenu') }}
+        </div>
+
+        {# Section : Système #}
+        <div>
+            <p class="px-2 mb-1 text-[10px] font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+                Système
+            </p>
+            {{ _self.nav_item('admin_settings', route, path('app_admin_dashboard_index'), 'settings', 'Paramètres') }}
+        </div>
+
+    </nav>
+
+    {# User footer #}
+    <div class="shrink-0 border-t border-zinc-200 dark:border-zinc-800 p-2">
+        <div class="flex items-center gap-2.5 px-2 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer transition-colors group">
+            <div class="w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-[11px] font-semibold text-blue-700 dark:text-blue-300 shrink-0">
+                {{ app.user ? (app.user.firstName[0]|upper ~ app.user.lastName[0]|upper) : 'AD' }}
+            </div>
+            <div class="flex-1 min-w-0">
+                <p class="text-xs font-medium text-zinc-900 dark:text-zinc-100 truncate">
+                    {{ app.user ? app.user.fullName : 'Administrateur' }}
+                </p>
+                <p class="text-[10px] text-zinc-500 dark:text-zinc-400 truncate">
+                    {{ app.user ? app.user.email : 'admin@example.com' }}
+                </p>
+            </div>
+            <svg class="w-3.5 h-3.5 text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+                <path d="M6 4l4 4-4 4"/>
+            </svg>
+        </div>
+    </div>
+</aside>
+
+{# ── Macro : nav item ── #}
+{% macro nav_item(item_route, current_route, href, icon, label, badge, dot) %}
+    {% set active = item_route == current_route or current_route starts with item_route %}
+    <a href="{{ href }}"
+       class="flex items-center gap-2.5 px-2 py-1.5 rounded-lg text-[13px] transition-colors
+              {{ active
+       ? 'bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-medium'
+       : 'text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100' }}"
+    >
+        {# Icon #}
+        <span class="w-4 h-4 shrink-0 {{ active ? 'text-zinc-900 dark:text-zinc-100' : 'text-zinc-400' }}">
+            {% if icon == 'dashboard' %}
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><rect x="1.5" y="1.5" width="5" height="5" rx="1"/><rect x="9.5" y="1.5" width="5" height="5" rx="1"/><rect x="1.5" y="9.5" width="5" height="5" rx="1"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/></svg>
+            {% elseif icon == 'chart' %}
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><path d="M2 12l3.5-4 3 3L13 5"/></svg>
+            {% elseif icon == 'document' %}
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><path d="M9 2H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6z"/><path d="M9 2v4h4"/></svg>
+            {% elseif icon == 'users' %}
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><path d="M11 13v-1a3 3 0 00-3-3H6a3 3 0 00-3 3v1"/><circle cx="7" cy="5" r="3"/><path d="M13 13v-1a3 3 0 00-2-2.83"/><path d="M10 2.17A3 3 0 0110 8"/></svg>
+            {% elseif icon == 'orders' %}
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1"/><path d="M5 3V2m6 1V2M2 7h12"/></svg>
+            {% elseif icon == 'box' %}
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><path d="M13 5.5L8 3 3 5.5v5L8 13l5-2.5v-5z"/><path d="M8 3v10M3 5.5l5 2.5 5-2.5"/></svg>
+            {% elseif icon == 'file' %}
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><path d="M4 2h5.5L12 4.5V14H4V2z"/><path d="M9 2v3h3"/><path d="M6 8h4M6 11h4"/></svg>
+            {% elseif icon == 'settings' %}
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2"/><path d="M8 1.5v1M8 13.5v1M1.5 8h1M13.5 8h1M3.4 3.4l.7.7M11.9 11.9l.7.7M3.4 12.6l.7-.7M11.9 4.1l.7-.7"/></svg>
+            {% endif %}
+        </span>
+
+        <span class="flex-1 truncate">{{ label }}</span>
+
+        {# Badge numérique #}
+        {% if badge %}
+            <span class="ml-auto text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-zinc-200 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300">
+                {{ badge }}
+            </span>
+        {% endif %}
+
+        {# Badge point rouge #}
+        {% if dot %}
+            <span class="ml-auto w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
+        {% endif %}
+    </a>
+{% endmacro %}

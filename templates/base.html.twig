@@ -19,7 +19,17 @@
         <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
         {% endif %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="bg-white text-zinc-900 antialiased">
+        {# ── NAVBAR ── #}
+        {% include 'composants/front/globals/navbar.html.twig' %}
+
+        {# ── CONTENU ── #}
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        {# ── FOOTER ── #}
+        {% include 'composants/front/globals/footer.html.twig' %}
     </body>
 </html>

@@ -1,0 +1,105 @@
+{#
+Navbar component — site public
+Usage : {% include 'components/navbar.html.twig' %}
+Détecte la route active via app.request.attributes.get('_route')
+#}
+{% set route = app.request.attributes.get('_route') %}
+
+<header
+    id="navbar"
+    style="position:sticky;top:0;z-index:50;"
+    class="bg-white/90 backdrop-blur border-b border-zinc-200 transition-shadow duration-200"
+>
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
+
+        {# Logo #}
+        <a href="{{ path('app_front_page_home') }}" class="flex items-center gap-2.5 shrink-0 group">
+            <div class="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center">
+                <svg class="w-4 h-4 fill-white" viewBox="0 0 16 16">
+                    <path d="M8 1L14 5v6l-6 4L2 11V5z"/>
+                </svg>
+            </div>
+            <span class="text-sm font-semibold tracking-tight text-zinc-900 group-hover:text-zinc-600 transition-colors">
+                {{ site_name|default('AssocDev') }}
+            </span>
+        </a>
+
+        {# Navigation desktop #}
+        <nav class="hidden md:flex items-center gap-1">
+            {% set links = [
+                { route: 'public_home',     label: 'Accueil',    href: path('app_front_page_home') },
+                { route: 'public_services', label: 'Services',   href: path('app_front_page_home') },
+                { route: 'public_about',    label: 'À propos',   href: path('app_front_page_home') },
+                { route: 'public_blog',     label: 'Actualités', href: path('app_front_page_home') },
+                { route: 'public_contact',  label: 'Contact',    href: path('app_front_page_home') },
+            ] %}
+            {% for link in links %}
+                <a href="{{ link.href }}"
+                   class="px-3 py-1.5 rounded-lg text-sm transition-colors
+                          {{ route == link.route
+                   ? 'text-zinc-900 font-medium bg-zinc-100'
+                   : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50' }}">
+                    {{ link.label }}
+                </a>
+            {% endfor %}
+        </nav>
+
+        {# CTA #}
+        <div class="hidden md:flex items-center gap-2">
+            <a href="{{ path('app_front_page_home') }}"
+               class="inline-flex items-center gap-1.5 h-9 px-4 text-sm font-medium rounded-lg
+                      bg-zinc-900 text-white hover:bg-zinc-700 transition-colors">
+                Nous contacter
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16">
+                    <path d="M3 8h10M9 4l4 4-4 4"/>
+                </svg>
+            </a>
+        </div>
+
+        {# Burger mobile #}
+        <button
+            id="menu-toggle"
+            class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-zinc-100 transition-colors"
+            aria-label="Menu"
+        >
+            <span class="w-5 h-px bg-zinc-700 block transition-all" id="b1"></span>
+            <span class="w-5 h-px bg-zinc-700 block transition-all" id="b2"></span>
+            <span class="w-5 h-px bg-zinc-700 block transition-all" id="b3"></span>
+        </button>
+
+    </div>
+
+    {# Menu mobile #}
+    <div id="mobile-menu" class="md:hidden hidden border-t border-zinc-100 bg-white px-6 pb-4">
+        <nav class="flex flex-col gap-1 pt-3">
+            {% for link in links %}
+                <a href="{{ link.href }}"
+                   class="px-3 py-2 rounded-lg text-sm transition-colors
+                          {{ route == link.route
+                   ? 'text-zinc-900 font-medium bg-zinc-100'
+                   : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50' }}">
+                    {{ link.label }}
+                </a>
+            {% endfor %}
+            <a href="{{ path('app_front_page_home') }}"
+               class="mt-2 inline-flex justify-center items-center h-9 px-4 text-sm font-medium rounded-lg
+                      bg-zinc-900 text-white hover:bg-zinc-700 transition-colors">
+                Nous contacter
+            </a>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu   = document.getElementById('mobile-menu');
+    const b1 = document.getElementById('b1');
+    const b2 = document.getElementById('b2');
+    const b3 = document.getElementById('b3');
+    toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('hidden') === false;
+        b1.style.transform = open ? 'translateY(6px) rotate(45deg)' : '';
+        b2.style.opacity   = open ? '0' : '1';
+        b3.style.transform = open ? 'translateY(-6px) rotate(-45deg)' : '';
+    });
+</script>

@@ -12,6 +12,6 @@ class AppSettingsExtension extends AbstractExtension implements GlobalsInterface
 
     public function getGlobals(): array
     {
-        return ['app_settings' => $this->settings->all()];
+        return ['settings' => $this->settings->all()];
     }
 }

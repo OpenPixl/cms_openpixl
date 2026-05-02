@@ -15,7 +15,7 @@ app:
         social:
             twitter: "https://twitter.com/monsite"
             facebook: "https://facebook.com/monsite"
-    site_offline: true
+    site_offline: false
     maintenance:
         offline_title: "Nous revenons très vite !!"
         offline_message: "Nous travaillons actuellement à la refonte de notre site !"
