@@ -20,4 +20,20 @@ final class PageController extends AbstractController
             'controller_name' => 'PageController',
         ]);
     }
+
+    #[Route('/page/cgu', name: 'app_front_page_cgu')]
+    public function cgu(): Response
+    {
+        return $this->render('front/page/cgu.html.twig', [
+            'controller_name' => 'PageController',
+        ]);
+    }
+
+    #[Route('/page/contact', name: 'app_front_page_contact')]
+    public function contact(): Response
+    {
+        return $this->render('front/page/contact.html.twig', [
+            'controller_name' => 'PageController',
+        ]);
+    }
 }

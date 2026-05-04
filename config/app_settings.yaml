@@ -1,7 +1,7 @@
 app:
     application: "OpenPixl"
     site:
-        slogan: "Le meilleur site de la ville"
+        slogan: "La transformation numérique à la protée de tous."
         description: "OpenPixl est le meilleur site de la ville"
         adresse: "12 rue de la ville, 75000 Paris"
         cp: "75000"

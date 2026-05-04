@@ -54,7 +54,7 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_admin_dashboard_index');
         }
 
-        return $this->render('registration/register.html.twig', [
+        return $this->render('admin/registration/register.html.twig', [
             'registrationForm' => $form,
         ]);
     }

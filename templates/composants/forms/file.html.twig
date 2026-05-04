@@ -1,0 +1,186 @@
+{#
+  Composant : form/file.html.twig
+  ─────────────────────────────────────────────────────────────
+  Paramètres :
+    name        (string)  — attribut name                      [requis]
+    label       (string)  — libellé visible                    [requis]
+    accept      (string)  — types MIME / extensions acceptés   [optionnel]
+                            ex : 'image/*' | '.pdf,.doc' | 'application/pdf'
+    multiple    (bool)    — plusieurs fichiers, défaut : false
+    help        (string)  — texte d'aide                       [optionnel]
+    error       (string)  — message d'erreur                   [optionnel]
+    required    (bool)    — défaut : false
+    disabled    (bool)    — défaut : false
+    max_size    (string)  — indication taille max (affichage)  [optionnel]
+    id          (string)  — surcharge l'id                     [optionnel]
+
+  Usage :
+    {% include 'components/form/file.html.twig' with {
+        name: 'document',
+        label: 'Pièce justificative',
+        accept: '.pdf,.jpg,.png',
+        max_size: '5 Mo',
+        required: true,
+        help: 'Formats acceptés : PDF, JPG, PNG',
+    } %}
+#}
+
+{% set _id       = id|default(name) %}
+{% set _required = required|default(false) %}
+{% set _disabled = disabled|default(false) %}
+{% set _multiple = multiple|default(false) %}
+{% set _hasError = error is defined and error is not empty %}
+{% set _hasHelp  = help is defined and help is not empty %}
+
+{% set _helpId   = _id ~ '-help' %}
+{% set _errorId  = _id ~ '-error' %}
+{% set _statusId = _id ~ '-status' %}
+
+{% set _described = [_statusId] %}
+{% if _hasHelp  %}{% set _described = _described|merge([_helpId])  %}{% endif %}
+{% if _hasError %}{% set _described = _described|merge([_errorId]) %}{% endif %}
+
+<div class="flex flex-col gap-1.5">
+
+    {# Label #}
+    <label
+        for="{{ _id }}"
+        class="text-sm font-medium text-zinc-700
+               {{ _disabled ? 'opacity-50' : '' }}"
+    >
+        {{ label }}
+        {% if _required %}
+            <span class="text-red-500 ml-0.5" aria-hidden="true">*</span>
+        {% endif %}
+    </label>
+
+    {# Zone de drop #}
+    <div
+        id="{{ _id }}-dropzone"
+        class="
+            relative flex flex-col items-center justify-center gap-3
+            border-2 border-dashed rounded-xl px-6 py-8 text-center
+            transition-colors cursor-pointer
+            {{ _hasError
+                ? 'border-red-300 bg-red-50 hover:bg-red-50'
+                : 'border-zinc-300 bg-zinc-50 hover:bg-white hover:border-zinc-400' }}
+            {{ _disabled ? 'opacity-50 pointer-events-none' : '' }}
+        "
+        aria-hidden="true"
+        onclick="document.getElementById('{{ _id }}').click()"
+        ondragover="event.preventDefault(); this.classList.add('border-zinc-900','bg-white')"
+        ondragleave="this.classList.remove('border-zinc-900','bg-white')"
+        ondrop="event.preventDefault(); this.classList.remove('border-zinc-900','bg-white'); handleDrop_{{ _id|replace({'-':'_'}) }}(event.dataTransfer.files)"
+    >
+        {# Icône upload #}
+        <div class="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center shadow-sm">
+            <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 10V3M5 6l3-3 3 3"/>
+                <path d="M3 11v1a1 1 0 001 1h8a1 1 0 001-1v-1"/>
+            </svg>
+        </div>
+
+        <div>
+            <p class="text-sm font-medium text-zinc-700">
+                Glissez un fichier ici ou
+                <span class="text-zinc-900 underline underline-offset-2">parcourez</span>
+            </p>
+            {% if max_size is defined or accept is defined %}
+                <p class="text-xs text-zinc-400 mt-1">
+                    {% if accept is defined %}{{ accept }}{% endif %}
+                    {% if max_size is defined %} — max. {{ max_size }}{% endif %}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+
+    {# Input file caché (accessible) #}
+    <input
+        type="file"
+        id="{{ _id }}"
+        name="{{ _multiple ? name ~ '[]' : name }}"
+        {% if accept is defined %}accept="{{ accept }}"{% endif %}
+        {% if _multiple %}multiple{% endif %}
+        {% if _required %}required aria-required="true"{% endif %}
+        {% if _disabled %}disabled aria-disabled="true"{% endif %}
+        {% if _hasError %}aria-invalid="true"{% else %}aria-invalid="false"{% endif %}
+        aria-describedby="{{ _described|join(' ') }}"
+        class="sr-only"
+        onchange="updateFileStatus_{{ _id|replace({'-':'_'}) }}(this.files)"
+    >
+
+    {# Statut fichier sélectionné — annoncé aux AT #}
+    <p
+        id="{{ _statusId }}"
+        class="text-xs text-zinc-500 flex items-center gap-1.5"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+        <svg class="w-3.5 h-3.5 text-zinc-400 shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M4 2h5.5L12 4.5V14H4V2z"/><path d="M9 2v3h3"/>
+        </svg>
+        <span id="{{ _id }}-filename">Aucun fichier sélectionné</span>
+    </p>
+
+    {# Aide #}
+    {% if _hasHelp %}
+        <p id="{{ _helpId }}" class="text-xs text-zinc-500">{{ help }}</p>
+    {% endif %}
+
+    {# Erreur #}
+    {% if _hasError %}
+        <p
+            id="{{ _errorId }}"
+            class="text-xs text-red-600 flex items-center gap-1"
+            role="alert"
+            aria-live="polite"
+        >
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" aria-hidden="true">
+                <circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v.5"/>
+            </svg>
+            {{ error }}
+        </p>
+    {% endif %}
+
+</div>
+
+<script>
+(function () {
+    var label = document.getElementById('{{ _id }}-filename');
+
+    function updateFileStatus_{{ _id|replace({'-':'_'}) }}(files) {
+        if (!files || files.length === 0) {
+            label.textContent = 'Aucun fichier sélectionné';
+            return;
+        }
+        if (files.length === 1) {
+            label.textContent = files[0].name + ' (' + formatSize(files[0].size) + ')';
+        } else {
+            label.textContent = files.length + ' fichiers sélectionnés';
+        }
+    }
+
+    function handleDrop_{{ _id|replace({'-':'_'}) }}(files) {
+        var input = document.getElementById('{{ _id }}');
+        // Moderne DataTransfer pour assigner les fichiers droppés
+        try {
+            var dt = new DataTransfer();
+            Array.from(files).forEach(function (f) { dt.items.add(f); });
+            input.files = dt.files;
+            updateFileStatus_{{ _id|replace({'-':'_'}) }}(dt.files);
+        } catch (e) {
+            updateFileStatus_{{ _id|replace({'-':'_'}) }}(files);
+        }
+    }
+
+    function formatSize(bytes) {
+        if (bytes < 1024) return bytes + ' o';
+        if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' Ko';
+        return (bytes / 1048576).toFixed(1) + ' Mo';
+    }
+
+    // Expose to global scope for inline handlers
+    window['updateFileStatus_{{ _id|replace({'-':'_'}) }}'] = updateFileStatus_{{ _id|replace({'-':'_'}) }};
+    window['handleDrop_{{ _id|replace({'-':'_'}) }}'] = handleDrop_{{ _id|replace({'-':'_'}) }};
+})();
+</script>

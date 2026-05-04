@@ -1,0 +1,122 @@
+{#
+  Composant : form/toggle.html.twig
+  ─────────────────────────────────────────────────────────────
+  Paramètres :
+    name        (string)  — attribut name                      [requis]
+    label       (string)  — libellé visible                    [requis]
+    value       (string)  — valeur soumise, défaut : '1'
+    checked     (bool)    — activé par défaut, défaut : false
+    help        (string)  — texte d'aide                       [optionnel]
+    error       (string)  — message d'erreur                   [optionnel]
+    disabled    (bool)    — défaut : false
+    label_on    (string)  — texte état activé,  défaut : 'Activé'
+    label_off   (string)  — texte état inactif, défaut : 'Désactivé'
+    id          (string)  — surcharge l'id                     [optionnel]
+
+  Usage :
+    {% include 'components/form/toggle.html.twig' with {
+        name: 'notifications',
+        label: 'Notifications par e-mail',
+        checked: true,
+        help: 'Recevez un e-mail à chaque nouvelle commande',
+    } %}
+#}
+
+{% set _id       = id|default(name) %}
+{% set _value    = value|default('1') %}
+{% set _checked  = checked|default(false) %}
+{% set _disabled = disabled|default(false) %}
+{% set _labelOn  = label_on|default('Activé') %}
+{% set _labelOff = label_off|default('Désactivé') %}
+{% set _hasError = error is defined and error is not empty %}
+{% set _hasHelp  = help is defined and help is not empty %}
+
+{% set _helpId   = _id ~ '-help' %}
+{% set _errorId  = _id ~ '-error' %}
+{% set _statusId = _id ~ '-status' %}
+
+{% set _described = [_statusId] %}
+{% if _hasHelp  %}{% set _described = _described|merge([_helpId])  %}{% endif %}
+{% if _hasError %}{% set _described = _described|merge([_errorId]) %}{% endif %}
+
+<div class="flex flex-col gap-1.5">
+    <div class="flex items-center justify-between gap-4">
+
+        {# Label + aide #}
+        <div class="flex flex-col gap-0.5">
+            <label
+                for="{{ _id }}"
+                class="text-sm font-medium text-zinc-700
+                       {{ _disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer' }}"
+            >{{ label }}</label>
+            {% if _hasHelp %}
+                <p id="{{ _helpId }}" class="text-xs text-zinc-500">{{ help }}</p>
+            {% endif %}
+        </div>
+
+        {# Toggle wrapper #}
+        <div class="relative shrink-0">
+            <input
+                type="checkbox"
+                role="switch"
+                id="{{ _id }}"
+                name="{{ name }}"
+                value="{{ _value }}"
+                {% if _checked %}checked{% endif %}
+                {% if _disabled %}disabled aria-disabled="true"{% endif %}
+                {% if _hasError %}aria-invalid="true"{% endif %}
+                aria-checked="{{ _checked ? 'true' : 'false' }}"
+                aria-describedby="{{ _described|join(' ') }}"
+                class="
+                    peer sr-only
+                "
+                onchange="
+                    this.setAttribute('aria-checked', this.checked);
+                    document.getElementById('{{ _statusId }}').textContent = this.checked ? '{{ _labelOn }}' : '{{ _labelOff }}';
+                "
+            >
+            <label
+                for="{{ _id }}"
+                class="
+                    flex items-center w-11 h-6 rounded-full border-2 border-transparent
+                    transition-colors duration-200 cursor-pointer
+                    {{ _disabled ? 'opacity-50 cursor-not-allowed' : '' }}
+                    peer-focus-visible:ring-2 peer-focus-visible:ring-zinc-900 peer-focus-visible:ring-offset-2
+                    {{ _hasError
+                        ? 'bg-zinc-200 peer-checked:bg-red-500'
+                        : 'bg-zinc-200 peer-checked:bg-zinc-900' }}
+                "
+                aria-hidden="true"
+            >
+                <span class="
+                    w-5 h-5 rounded-full bg-white shadow-sm
+                    transform transition-transform duration-200
+                    translate-x-0 peer-checked:translate-x-5
+                    block
+                "></span>
+            </label>
+        </div>
+
+    </div>
+
+    {# État courant annoncé aux lecteurs d'écran #}
+    <p id="{{ _statusId }}" class="sr-only" aria-live="polite" aria-atomic="true">
+        {{ _checked ? _labelOn : _labelOff }}
+    </p>
+
+    {# Erreur #}
+    {% if _hasError %}
+        <p
+            id="{{ _errorId }}"
+            class="text-xs text-red-600 flex items-center gap-1"
+            role="alert"
+            aria-live="polite"
+        >
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" aria-hidden="true">
+                <circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v.5"/>
+            </svg>
+            {{ error }}
+        </p>
+    {% endif %}
+
+</div>

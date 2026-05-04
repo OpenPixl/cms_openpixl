@@ -1,0 +1,125 @@
+{#
+  Composant : form/date.html.twig
+  ─────────────────────────────────────────────────────────────
+  Paramètres :
+    name        (string)  — attribut name                      [requis]
+    label       (string)  — libellé visible                    [requis]
+    value       (string)  — valeur initiale (format YYYY-MM-DD)[optionnel]
+    min         (string)  — date minimum (YYYY-MM-DD)          [optionnel]
+    max         (string)  — date maximum (YYYY-MM-DD)          [optionnel]
+    help        (string)  — texte d'aide                       [optionnel]
+    error       (string)  — message d'erreur                   [optionnel]
+    required    (bool)    — défaut : false
+    disabled    (bool)    — défaut : false
+    readonly    (bool)    — défaut : false
+    type        (string)  — 'date' | 'datetime-local' | 'month' | 'week'
+                            défaut : 'date'
+    id          (string)  — surcharge l'id                     [optionnel]
+
+  Usage :
+    {% include 'components/form/date.html.twig' with {
+        name: 'birth_date',
+        label: 'Date de naissance',
+        max: 'now'|date('Y-m-d'),
+        required: true,
+        help: 'Format : JJ/MM/AAAA',
+    } %}
+#}
+
+{% set _type     = type|default('date') %}
+{% set _id       = id|default(name) %}
+{% set _required = required|default(false) %}
+{% set _disabled = disabled|default(false) %}
+{% set _readonly = readonly|default(false) %}
+{% set _hasError = error is defined and error is not empty %}
+{% set _hasHelp  = help is defined and help is not empty %}
+
+{% set _helpId  = _id ~ '-help' %}
+{% set _errorId = _id ~ '-error' %}
+
+{% set _described = [] %}
+{% if _hasHelp  %}{% set _described = _described|merge([_helpId])  %}{% endif %}
+{% if _hasError %}{% set _described = _described|merge([_errorId]) %}{% endif %}
+
+{# Libellés types pour les AT #}
+{% set _typeLabel = {
+    'date':           'Sélectionnez une date',
+    'datetime-local': 'Sélectionnez une date et une heure',
+    'month':          'Sélectionnez un mois',
+    'week':           'Sélectionnez une semaine',
+}[_type]|default('Sélectionnez une date') %}
+
+<div class="flex flex-col gap-1.5">
+
+    {# Label #}
+    <label
+        for="{{ _id }}"
+        class="text-sm font-medium text-zinc-700
+               {{ _disabled ? 'opacity-50 cursor-not-allowed' : '' }}"
+    >
+        {{ label }}
+        {% if _required %}
+            <span class="text-red-500 ml-0.5" aria-hidden="true">*</span>
+        {% endif %}
+    </label>
+
+    {# Wrapper avec icône calendrier #}
+    <div class="relative">
+
+        {# Icône calendrier #}
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-400" aria-hidden="true">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+                <rect x="2" y="3" width="12" height="10" rx="1"/>
+                <path d="M5 3V1m6 2V1M2 7h12"/>
+            </svg>
+        </span>
+
+        <input
+            type="{{ _type }}"
+            id="{{ _id }}"
+            name="{{ name }}"
+            {% if value is defined and value is not empty %}value="{{ value }}"{% endif %}
+            {% if min is defined %}min="{{ min }}"{% endif %}
+            {% if max is defined %}max="{{ max }}"{% endif %}
+            {% if _required %}required aria-required="true"{% endif %}
+            {% if _disabled %}disabled aria-disabled="true"{% endif %}
+            {% if _readonly %}readonly aria-readonly="true"{% endif %}
+            {% if _hasError %}aria-invalid="true"{% else %}aria-invalid="false"{% endif %}
+            {% if _described is not empty %}aria-describedby="{{ _described|join(' ') }}"{% endif %}
+            aria-label="{{ label }} — {{ _typeLabel }}"
+            class="
+                w-full h-9 rounded-lg border bg-white text-sm text-zinc-900
+                pl-9 pr-3
+                focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-zinc-900
+                transition-colors
+                [color-scheme:light]
+                {{ _hasError
+                    ? 'border-red-400 focus:ring-red-500 bg-red-50'
+                    : 'border-zinc-300 hover:border-zinc-400' }}
+                {{ _disabled ? 'opacity-50 cursor-not-allowed bg-zinc-50' : '' }}
+                {{ _readonly ? 'bg-zinc-50 cursor-default' : '' }}
+            "
+        >
+    </div>
+
+    {# Aide #}
+    {% if _hasHelp %}
+        <p id="{{ _helpId }}" class="text-xs text-zinc-500">{{ help }}</p>
+    {% endif %}
+
+    {# Erreur #}
+    {% if _hasError %}
+        <p
+            id="{{ _errorId }}"
+            class="text-xs text-red-600 flex items-center gap-1"
+            role="alert"
+            aria-live="polite"
+        >
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" aria-hidden="true">
+                <circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v.5"/>
+            </svg>
+            {{ error }}
+        </p>
+    {% endif %}
+
+</div>

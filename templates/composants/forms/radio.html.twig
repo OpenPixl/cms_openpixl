@@ -1,0 +1,140 @@
+{#
+  Composant : form/radio.html.twig
+  ─────────────────────────────────────────────────────────────
+  Paramètres :
+    name        (string)  — attribut name partagé              [requis]
+    legend      (string)  — libellé du groupe (fieldset)       [requis]
+    options     (array)   — [{value, label, help?}]            [requis]
+    value       (string)  — valeur sélectionnée                [optionnel]
+    help        (string)  — aide globale du groupe             [optionnel]
+    error       (string)  — message d'erreur du groupe         [optionnel]
+    required    (bool)    — défaut : false
+    disabled    (bool)    — défaut : false
+    layout      (string)  — 'vertical' (défaut) | 'horizontal'
+
+  Usage :
+    {% include 'components/form/radio.html.twig' with {
+        name: 'type',
+        legend: 'Type de structure',
+        required: true,
+        value: 'association',
+        options: [
+            { value: 'association', label: 'Association loi 1901' },
+            { value: 'entreprise',  label: 'Jeune entreprise', help: 'Moins de 3 ans' },
+            { value: 'autre',       label: 'Autre' },
+        ],
+    } %}
+#}
+
+{% set _required = required|default(false) %}
+{% set _disabled = disabled|default(false) %}
+{% set _layout   = layout|default('vertical') %}
+{% set _hasError = error is defined and error is not empty %}
+{% set _hasHelp  = help is defined and help is not empty %}
+
+{% set _groupId  = name ~ '-group' %}
+{% set _helpId   = name ~ '-help' %}
+{% set _errorId  = name ~ '-error' %}
+
+{% set _described = [] %}
+{% if _hasHelp  %}{% set _described = _described|merge([_helpId])  %}{% endif %}
+{% if _hasError %}{% set _described = _described|merge([_errorId]) %}{% endif %}
+
+<fieldset
+    {% if _hasError %}aria-invalid="true"{% endif %}
+    {% if _described is not empty %}aria-describedby="{{ _described|join(' ') }}"{% endif %}
+    class="border-0 p-0 m-0"
+>
+    {# Légende = label du groupe #}
+    <legend class="text-sm font-medium text-zinc-700 mb-2 {{ _disabled ? 'opacity-50' : '' }}">
+        {{ legend }}
+        {% if _required %}
+            <span class="text-red-500 ml-0.5" aria-hidden="true">*</span>
+        {% endif %}
+    </legend>
+
+    {# Aide groupe #}
+    {% if _hasHelp %}
+        <p id="{{ _helpId }}" class="text-xs text-zinc-500 mb-3">{{ help }}</p>
+    {% endif %}
+
+    {# Options #}
+    <div
+        class="flex {{ _layout == 'horizontal' ? 'flex-row flex-wrap gap-x-6 gap-y-2' : 'flex-col gap-2' }}"
+        role="radiogroup"
+        aria-labelledby="{{ _groupId }}"
+        aria-required="{{ _required ? 'true' : 'false' }}"
+    >
+        <span id="{{ _groupId }}" class="sr-only">{{ legend }}</span>
+
+        {% for option in options %}
+            {% set _optId = name ~ '_' ~ loop.index %}
+            {% set _isChecked = value is defined and option.value == value %}
+            {% set _optDisabled = _disabled or (option.disabled is defined and option.disabled) %}
+            {% set _hasOptHelp  = option.help is defined and option.help is not empty %}
+            {% set _optHelpId   = _optId ~ '-help' %}
+
+            <div class="flex items-start gap-3">
+
+                {# Radio input #}
+                <div class="relative flex items-center mt-0.5 shrink-0">
+                    <input
+                        type="radio"
+                        id="{{ _optId }}"
+                        name="{{ name }}"
+                        value="{{ option.value }}"
+                        {% if _isChecked %}checked{% endif %}
+                        {% if _required %}aria-required="true"{% endif %}
+                        {% if _optDisabled %}disabled aria-disabled="true"{% endif %}
+                        {% if _hasError %}aria-invalid="true"{% endif %}
+                        {% if _hasOptHelp %}aria-describedby="{{ _optHelpId }}"{% endif %}
+                        class="
+                            peer w-4 h-4 rounded-full border cursor-pointer appearance-none
+                            transition-colors
+                            {{ _hasError
+                                ? 'border-red-400 checked:border-red-500 focus:ring-red-500'
+                                : 'border-zinc-300 checked:border-zinc-900 focus:ring-zinc-900' }}
+                            {{ _optDisabled ? 'opacity-50 cursor-not-allowed' : '' }}
+                            focus:outline-none focus:ring-2 focus:ring-offset-1
+                        "
+                    >
+                    {# Dot SVG overlay #}
+                    <span
+                        class="absolute w-2 h-2 rounded-full left-1 top-1 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity
+                               {{ _hasError ? 'bg-red-500' : 'bg-zinc-900' }}"
+                        aria-hidden="true"
+                    ></span>
+                </div>
+
+                {# Label + aide option #}
+                <div class="flex flex-col gap-0.5">
+                    <label
+                        for="{{ _optId }}"
+                        class="text-sm text-zinc-700 leading-snug
+                               {{ _optDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer' }}"
+                    >{{ option.label }}</label>
+                    {% if _hasOptHelp %}
+                        <p id="{{ _optHelpId }}" class="text-xs text-zinc-500">{{ option.help }}</p>
+                    {% endif %}
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+
+    {# Erreur groupe #}
+    {% if _hasError %}
+        <p
+            id="{{ _errorId }}"
+            class="mt-2 text-xs text-red-600 flex items-center gap-1"
+            role="alert"
+            aria-live="polite"
+        >
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" aria-hidden="true">
+                <circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v.5"/>
+            </svg>
+            {{ error }}
+        </p>
+    {% endif %}
+
+</fieldset>

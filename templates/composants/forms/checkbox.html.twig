@@ -1,0 +1,111 @@
+{#
+  Composant : form/checkbox.html.twig
+  ─────────────────────────────────────────────────────────────
+  Paramètres :
+    name        (string)  — attribut name                      [requis]
+    label       (string)  — libellé visible                    [requis]
+    value       (string)  — valeur soumise, défaut : '1'
+    checked     (bool)    — coché par défaut, défaut : false
+    help        (string)  — texte d'aide                       [optionnel]
+    error       (string)  — message d'erreur                   [optionnel]
+    required    (bool)    — défaut : false
+    disabled    (bool)    — défaut : false
+    id          (string)  — surcharge l'id                     [optionnel]
+
+  Usage :
+    {% include 'components/form/checkbox.html.twig' with {
+        name: 'cgu',
+        label: "J'accepte les conditions générales d'utilisation",
+        required: true,
+        error: form.cgu.vars.errors|length ? form.cgu.vars.errors[0].message,
+    } %}
+#}
+
+{% set _id       = id|default(name) %}
+{% set _value    = value|default('1') %}
+{% set _checked  = checked|default(false) %}
+{% set _required = required|default(false) %}
+{% set _disabled = disabled|default(false) %}
+{% set _hasError = error is defined and error is not empty %}
+{% set _hasHelp  = help is defined and help is not empty %}
+
+{% set _helpId  = _id ~ '-help' %}
+{% set _errorId = _id ~ '-error' %}
+
+{% set _described = [] %}
+{% if _hasHelp  %}{% set _described = _described|merge([_helpId])  %}{% endif %}
+{% if _hasError %}{% set _described = _described|merge([_errorId]) %}{% endif %}
+
+<div class="flex flex-col gap-1">
+    <div class="flex items-start gap-3">
+
+        {# Checkbox #}
+        <div class="relative flex items-center mt-0.5 shrink-0">
+            <input
+                type="checkbox"
+                id="{{ _id }}"
+                name="{{ name }}"
+                value="{{ _value }}"
+                {% if _checked %}checked{% endif %}
+                {% if _required %}required aria-required="true"{% endif %}
+                {% if _disabled %}disabled aria-disabled="true"{% endif %}
+                {% if _hasError %}aria-invalid="true"{% else %}aria-invalid="false"{% endif %}
+                {% if _described is not empty %}aria-describedby="{{ _described|join(' ') }}"{% endif %}
+                class="
+                    peer w-4 h-4 rounded border cursor-pointer appearance-none
+                    transition-colors
+                    {{ _hasError
+                        ? 'border-red-400 checked:bg-red-500 checked:border-red-500 focus:ring-red-500'
+                        : 'border-zinc-300 checked:bg-zinc-900 checked:border-zinc-900 focus:ring-zinc-900' }}
+                    {{ _disabled ? 'opacity-50 cursor-not-allowed' : '' }}
+                    focus:outline-none focus:ring-2 focus:ring-offset-1
+                "
+            >
+            {# Checkmark SVG overlay #}
+            <svg
+                class="absolute w-3 h-3 left-0.5 top-0.5 text-white pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+            >
+                <path d="M2 6l3 3 5-5"/>
+            </svg>
+        </div>
+
+        {# Label + aide #}
+        <div class="flex flex-col gap-0.5">
+            <label
+                for="{{ _id }}"
+                class="text-sm text-zinc-700 leading-snug
+                       {{ _disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer' }}"
+            >
+                {{ label }}
+                {% if _required %}
+                    <span class="text-red-500 ml-0.5" aria-hidden="true">*</span>
+                {% endif %}
+            </label>
+            {% if _hasHelp %}
+                <p id="{{ _helpId }}" class="text-xs text-zinc-500">{{ help }}</p>
+            {% endif %}
+        </div>
+
+    </div>
+
+    {# Erreur #}
+    {% if _hasError %}
+        <p
+            id="{{ _errorId }}"
+            class="text-xs text-red-600 flex items-center gap-1 ml-7"
+            role="alert"
+            aria-live="polite"
+        >
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" aria-hidden="true">
+                <circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v.5"/>
+            </svg>
+            {{ error }}
+        </p>
+    {% endif %}
+
+</div>

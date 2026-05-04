@@ -1,0 +1,175 @@
+{#
+  Composant : form/input.html.twig
+  ─────────────────────────────────────────────────────────────
+  Paramètres :
+    name        (string)  — attribut name + id de base         [requis]
+    label       (string)  — libellé visible                    [requis]
+    type        (string)  — text | email | password | number | tel | url
+                            défaut : 'text'
+    value       (string)  — valeur initiale                    [optionnel]
+    placeholder (string)  — texte fantôme                      [optionnel]
+    help        (string)  — texte d'aide sous le champ         [optionnel]
+    error       (string)  — message d'erreur                   [optionnel]
+    required    (bool)    — champ obligatoire, défaut : false
+    disabled    (bool)    — champ désactivé,  défaut : false
+    readonly    (bool)    — champ en lecture seule              [optionnel]
+    autocomplete(string)  — valeur autocomplete HTML5           [optionnel]
+    min         (number)  — min pour type number               [optionnel]
+    max         (number)  — max pour type number               [optionnel]
+    icon        (string)  — 'mail' | 'lock' | 'user' | 'search'| 'phone' [optionnel]
+    suffix      (string)  — texte suffixe (ex: '€', 'kg')     [optionnel]
+    id          (string)  — surcharge l'id généré              [optionnel]
+    attrs       (object)  — attributs HTML supplémentaires     [optionnel]
+
+  Usage :
+    {% include 'components/form/input.html.twig' with {
+        name: 'email',
+        label: 'Adresse e-mail',
+        type: 'email',
+        required: true,
+        help: 'Utilisée pour la connexion',
+        error: form.email.vars.errors|length ? form.email.vars.errors[0].message,
+    } %}
+#}
+
+{% set _type     = type|default('text') %}
+{% set _id       = id|default(name) %}
+{% set _required = required|default(false) %}
+{% set _disabled = disabled|default(false) %}
+{% set _readonly = readonly|default(false) %}
+{% set _hasError = error is defined and error is not empty %}
+{% set _hasHelp  = help is defined and help is not empty %}
+{% set _hasIcon  = icon is defined and icon is not empty %}
+{% set _hasSuffix = suffix is defined and suffix is not empty %}
+
+{% set _helpId  = _id ~ '-help' %}
+{% set _errorId = _id ~ '-error' %}
+
+{# Construction de aria-describedby #}
+{% set _described = [] %}
+{% if _hasHelp  %}{% set _described = _described|merge([_helpId])  %}{% endif %}
+{% if _hasError %}{% set _described = _described|merge([_errorId]) %}{% endif %}
+
+<div class="flex flex-col gap-1.5">
+
+    {# Label #}
+    <label
+        for="{{ _id }}"
+        class="text-sm font-medium text-zinc-700
+               {{ _disabled ? 'opacity-50 cursor-not-allowed' : '' }}"
+    >
+        {{ label }}
+        {% if _required %}
+            <span class="text-red-500 ml-0.5" aria-hidden="true">*</span>
+        {% endif %}
+    </label>
+
+    {# Wrapper input #}
+    <div class="relative flex items-center">
+
+        {# Icône gauche #}
+        {% if _hasIcon %}
+            <span
+                class="absolute left-3 flex items-center pointer-events-none text-zinc-400"
+                aria-hidden="true"
+            >
+                {% if icon == 'mail' %}
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 4l7 5 7-5"/></svg>
+                {% elseif icon == 'lock' %}
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7" rx="1"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>
+                {% elseif icon == 'user' %}
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><path d="M13 14v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="8" cy="5" r="3"/></svg>
+                {% elseif icon == 'search' %}
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10 10l3.5 3.5"/></svg>
+                {% elseif icon == 'phone' %}
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><path d="M2 3h3l1.5 3-1.5 1.5a9 9 0 004.5 4.5L11 10.5l3 1.5v3a1 1 0 01-1 1A13 13 0 012 3z"/></svg>
+                {% endif %}
+            </span>
+        {% endif %}
+
+        {# Champ #}
+        <input
+            type="{{ _type }}"
+            id="{{ _id }}"
+            name="{{ name }}"
+            {% if value is defined and value is not empty %}value="{{ value }}"{% endif %}
+            {% if placeholder is defined %}placeholder="{{ placeholder }}"{% endif %}
+            {% if autocomplete is defined %}autocomplete="{{ autocomplete }}"{% endif %}
+            {% if min is defined %}min="{{ min }}"{% endif %}
+            {% if max is defined %}max="{{ max }}"{% endif %}
+            {% if _required %}required aria-required="true"{% endif %}
+            {% if _disabled %}disabled aria-disabled="true"{% endif %}
+            {% if _readonly %}readonly aria-readonly="true"{% endif %}
+            {% if _hasError %}aria-invalid="true"{% else %}aria-invalid="false"{% endif %}
+            {% if _described is not empty %}aria-describedby="{{ _described|join(' ') }}"{% endif %}
+            class="
+                w-full h-9 rounded-lg border bg-white text-sm text-zinc-900
+                placeholder:text-zinc-400
+                focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-zinc-900
+                transition-colors
+                {{ _hasIcon   ? 'pl-9'  : 'pl-3' }}
+                {{ _hasSuffix ? 'pr-12' : 'pr-3' }}
+                {{ _hasError
+                    ? 'border-red-400 focus:ring-red-500 bg-red-50'
+                    : 'border-zinc-300 hover:border-zinc-400' }}
+                {{ _disabled  ? 'opacity-50 cursor-not-allowed bg-zinc-50' : '' }}
+                {{ _readonly  ? 'bg-zinc-50 cursor-default' : '' }}
+            "
+            {% if attrs is defined %}
+                {% for attr, val in attrs %}{{ attr }}="{{ val }}" {% endfor %}
+            {% endif %}
+        >
+
+        {# Suffixe #}
+        {% if _hasSuffix %}
+            <span
+                class="absolute right-3 text-sm text-zinc-400 pointer-events-none select-none"
+                aria-hidden="true"
+            >{{ suffix }}</span>
+        {% endif %}
+
+        {# Icône mot de passe — toggle visibilité #}
+        {% if _type == 'password' %}
+            <button
+                type="button"
+                class="absolute right-3 text-zinc-400 hover:text-zinc-700 transition-colors"
+                aria-label="Afficher / masquer le mot de passe"
+                onclick="
+                    var i = this.previousElementSibling;
+                    var shown = i.type === 'text';
+                    i.type = shown ? 'password' : 'text';
+                    this.setAttribute('aria-pressed', !shown);
+                    this.querySelector('svg').style.opacity = shown ? '1' : '0.5';
+                "
+                aria-pressed="false"
+            >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z"/>
+                    <circle cx="8" cy="8" r="2"/>
+                </svg>
+            </button>
+        {% endif %}
+
+    </div>
+
+    {# Aide #}
+    {% if _hasHelp %}
+        <p id="{{ _helpId }}" class="text-xs text-zinc-500">{{ help }}</p>
+    {% endif %}
+
+    {# Erreur #}
+    {% if _hasError %}
+        <p
+            id="{{ _errorId }}"
+            class="text-xs text-red-600 flex items-center gap-1"
+            role="alert"
+            aria-live="polite"
+        >
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" aria-hidden="true">
+                <circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v.5"/>
+            </svg>
+            {{ error }}
+        </p>
+    {% endif %}
+
+</div>

@@ -9,7 +9,7 @@ services:
         - PHP_VERSION=${PHP_VERSION:-8.4}
         - GIT_USER_EMAIL=${GIT_USER_EMAIL:-youremail@email.com}
         - GIT_USER_NAME=${GIT_USER_NAME:-yourname}
-    container_name: cms_project_php
+    container_name: cms_openpixl_php
     restart: unless-stopped
     ports:
       - "81:80"
@@ -22,12 +22,12 @@ services:
     depends_on:
       - db
     networks:
-      - cms_project
+      - cms_openpixl
 
   ###> doctrine/doctrine-bundle ###
   db:
     image: postgres:${POSTGRES_VERSION:-16}-alpine
-    container_name: cms_project_db
+    container_name: cms_openpixl_db
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-app}
       # You should definitely change the password in production
@@ -41,7 +41,7 @@ services:
     volumes:
       - database_data:/var/lib/postgresql/data:rw
     networks:
-      - cms_project
+      - cms_openpixl
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
       # - ./docker/db/data:/var/lib/postgresql/data:rw
   ###< doctrine/doctrine-bundle ###
@@ -52,5 +52,5 @@ volumes:
 ###< doctrine/doctrine-bundle ###
 
 networks:
-  cms_project:
+  cms_openpixl:
     external: true
