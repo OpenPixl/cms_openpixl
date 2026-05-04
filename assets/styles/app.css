@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @source not "../../public";
 
+a{
+    color: #6ac8e6;
+}
+
 .maintenance-background {
     position: relative;
     overflow: hidden;
